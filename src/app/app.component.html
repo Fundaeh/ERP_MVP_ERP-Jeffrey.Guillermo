@@ -1,0 +1,71 @@
+<nav class="nav fixed-top">
+  <div class="menu">
+    <div class="menu-hamburguesa">
+      <button class="abrir-hamburguesa" (click)="onClick()"><img class="icon-ham" src="../assets/iconos/menuHamburguesa.svg" alt="Menu"></button>
+      <h1 class="name-page">Bee<span>contable</span></h1>
+    </div>
+    <div class="menu-sesion">
+      <p class="contador">0001</p>
+      <div class="icono-sesion">
+        <img class="icono-sesion" src="../assets/iconos/Icono Usuario-05.png" alt="Usuario">
+        <div class="menu-vertical">
+          <div class="menu-vertical-head">
+            <h3>Sergio Nortero</h3>
+            <p>Estudiante 001</p>
+          </div>
+          <div class="menu-config">
+            <div class="config-option">
+              <img class="img-menu-conf" src="../assets/iconos/IconoUsuario-Inicio.png" alt="User">
+              <p>Inicio</p>
+            </div>
+            <div class="config-option">
+              <img class="img-menu-conf" src="../assets/iconos/IconoConfiguración-Gris.png" alt="User">
+              <p>Configuración contable</p>
+            </div>
+            <div class="config-option">
+              <img class="img-menu-conf" src="../assets/iconos/IconoConfiguración-Gris.png" alt="User">
+              <p>Registro generales</p>
+            </div>
+            <div class="config-option">
+              <img class="img-menu-conf" src="../assets/iconos/IconoUsuario-Inicio.png" alt="User">
+              <p>Cambiar Contraseña</p>
+            </div>
+            <div class="config-option">
+              <img class="img-menu-conf" src="../assets/iconos/Icono-Historial.png" alt="User">
+              <p>Historial de Cambios</p>
+            </div>
+            <div class="config-option">
+              <img class="img-menu-conf" src="../assets/iconos/IconoUsuario-Inicio.png" alt="User">
+              <p>Soporte Técnico</p>
+            </div>
+            <div class="config-option">
+              <img class="img-menu-conf" src="../assets/iconos/Icono-Cerrar-Sesión.png" alt="User">
+              <p>Cerrar Sesión</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="icono-sesion" src="../assets/iconos/Icono Configuración-05.png" alt="Configuración">
+    </div>
+  </div>
+
+  <div class="d-flex union">
+    <button routerLink="/resultados/resultados" class="boton-enviar" (click)="mandarDato()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+      </svg>
+    </button>
+    <input type="text" [(ngModel)]="valor" placeholder="Buscar en este ERP Contable"  class=" buscador">
+  </div>
+</nav>
+
+
+<div class="contenedor">
+  <router-outlet></router-outlet>
+</div>
+
+
+<footer>
+  Beecontable Software | 2022 - 2023
+</footer>

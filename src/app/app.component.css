@@ -1,0 +1,205 @@
+.nav {
+    background-color: #DDA800;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    /* border-bottom: 1px solid #DDA800; */
+    /* box-shadow: 0px 2px 5px 0px #C4C4C4;
+    -webkit-box-shadow: 0px 2px 5px 0px #C4C4C4;
+    -moz-box-shadow: 0px 2px 5px 0px #C4C4C4; */
+}
+
+.menu {
+    background-image: url(../assets/iconos/navbar.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 95px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-hamburguesa {
+    /* background-color: blueviolet; */
+    padding: 10px 0px;
+    height: 50px;
+    display: flex;
+}
+
+.icon-ham {
+    height: 40px;
+}
+
+.abrir-hamburguesa {
+    border: none;
+    background-color: transparent;
+}
+
+.nav-list {
+    /* display: none; */
+    padding: 0;
+}
+
+.displayNone {
+    display: none;
+}
+
+.displayBlock {
+    display: block;
+}
+
+.name-page {
+    margin: 0;
+    font-size: 30px;
+    color: #DDA800;
+}
+
+span {
+    color: #03588C;
+}
+
+.menu-sesion {
+    width: 10%;
+    height: 60%;
+    cursor: pointer;
+    /* background-color: #03588C; */
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icono-sesion {
+    /* margin: 10px;
+    margin-bottom: 0; */
+    width: 30px;
+    height: 30px;
+}
+
+.menu-vertical {
+    position: absolute;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: auto;
+    right: 0;
+    top: 45px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: -5px 3px 9px 0px rgba(99,96,96,0.74);
+    -webkit-box-shadow: -5px 3px 9px 0px rgba(99,96,96,0.74);
+    -moz-box-shadow: -5px 3px 9px 0px rgba(99,96,96,0.74);
+}
+
+.menu-vertical:hover {
+    display: block;
+}
+
+.menu-vertical-head {
+    /* background-color: aquamarine; */
+    text-align: left;
+    padding: 10px 20px;
+    border-bottom: 2px solid #03588C;
+}
+.menu-vertical-head h3 {
+    margin: 0;
+    font-weight: 500;
+}
+.menu-vertical-head {
+    font-size: 12px;
+}
+
+.config-option {
+    width: 250px;
+    display: flex;
+    gap: 5px;
+    padding: 5px 20px;
+    font-size: 16px;
+    /* margin-bottom: 10px; */
+}
+
+.config-option p {
+    padding-top: 7px;
+}
+
+.config-option:last-of-type {
+    border-radius: 0px 0px 10px 10px;
+}
+
+.config-option:hover{
+    background-color: rgb(213, 210, 210);
+    cursor: pointer;
+}
+
+.icono-sesion:hover > .menu-vertical {
+    display: block;
+}
+
+.img-menu-conf {
+    width: 30px;
+    height: 30px;
+}
+
+.contador {
+    padding-top: 20px;
+}
+
+
+.contenedor-buscador {
+    width: 1100px;
+    height: auto;
+    background-color: #DDA800;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: center;
+
+    /* border-radius: 30% 0px 0px 0px; */
+}
+
+.union {
+    background-color: #EAEAEA;
+    border-radius: 30px;
+    /* Esta propiedad hace que el buscador se resalte al abrir el menu hamburguesa */
+    position: absolute;
+    bottom: 5px;
+    right: 300px;
+}
+
+.boton-enviar {
+    border: none;
+    border-radius: 20px;
+}
+
+.buscador {
+    width: 400px;
+    /* background-color: transparent; */
+    border: none;
+    border-radius: 30px;
+    outline: none;
+}
+
+
+
+/* ---------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+.contenedor {
+    /* background-color: aquamarine; */
+    max-width: 100rem;
+    margin: 105px 5px 0px 5px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    overflow: auto;
+}
+
+
+
+footer {
+    margin-top: 51px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(159, 156, 156);
+    font-weight: 700;
+}
+

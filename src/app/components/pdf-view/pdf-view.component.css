@@ -1,0 +1,19 @@
+.contenedor {
+    height: 80vh;
+    padding: 1rem;
+    /* margin: 70px 30px 30px 30px; */
+    border-radius: 10px;
+    background-color: #E2E2E2;
+    /* display: flex;
+    justify-content: space-evenly; */
+    overflow: auto;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.volverBtn {
+    margin: -10px 50px;
+}

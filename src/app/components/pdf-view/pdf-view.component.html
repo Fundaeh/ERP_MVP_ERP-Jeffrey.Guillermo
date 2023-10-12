@@ -1,0 +1,17 @@
+
+<div class="contenedor">
+    <!-- <h1>Abrir PDF</h1> -->
+
+    <div class="centro">
+    <ngx-extended-pdf-viewer
+        [src]="'assets/pdfs/' + src1"
+        [height]="'90vh'"
+        [textLayer]="true"
+        [useBrowserLocale]="true"
+        zoom="auto"
+        [theme]="'dark'">
+    </ngx-extended-pdf-viewer>
+    </div>
+</div>
+
+<a routerLink="/" class="volverBtn">Volver</a>

@@ -19,8 +19,8 @@ export class ContabilidadComponent {
     {"titulo": "Inicio", "Logo": "../../../assets/iconos/Logo-Contabilidad.png"},
     {"titulo": "Registro clientes", "Logo": "../../../assets/iconos/Logo-Contabilidad.png"},
     {"titulo": "Registro proveedores", "Logo": "../../../assets/iconos/Logo-Contabilidad.png"},
-    {"titulo": "Factura de credito fiscal", "Logo": "../../../assets/iconos/Logo-Contabilidad.png", "funcion": 'abrirCreditoFiscal'},
-    {"titulo": "Factura de consumidor final", "Logo": "../../../assets/iconos/Logo-Contabilidad.png", "funcion": 'abrirconsumidorFinal'}
+    {"titulo": "Factura de credito fiscal", "Logo": "../../../assets/iconos/Logo-Contabilidad.png", "funcion": this.abrirCreditoFiscal()},
+    {"titulo": "Factura de consumidor final", "Logo": "../../../assets/iconos/Logo-Contabilidad.png", "funcion": this.abrirconsumidorFinal()}
   ];
   constructor(public service:DataService, private fb: FormBuilder) {
     // console.log(service.desplegar);

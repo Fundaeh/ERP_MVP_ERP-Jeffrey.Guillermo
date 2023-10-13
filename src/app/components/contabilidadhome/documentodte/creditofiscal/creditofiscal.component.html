@@ -1,1 +1,87 @@
-<p>creditofiscal works!</p>
+<div class="container">
+  <div class="row">
+    <div class="card shadow-2 col-12 col-md-3">
+      <div class="card-body">
+        This is some text within a card body.
+      </div>
+    </div>
+    <div class="card shadow-2 col-12 col-md-9 bg-light">
+      <div class="card-body">
+        <div class="row pb-3">
+          <div class="col-1">
+            <img
+              class="img-fluid"
+                src="assets/iconos/Icono_Desplegable_Gris-04.png"
+                alt="Regresar"
+              />
+          </div>
+          <div class="col-11 d-flex justify-content-center">
+            <div class="border border-success p-2 mb-2 rounded d-flex justify-content-center" style="width: 450px;">
+              <p class="fs-5">Módulo - Credito Fiscal</p>
+            </div>
+          </div>
+        </div>
+        <div class="row pb-3">
+          <div class="col-6 d-flex justify-content-end">
+            <button class="btn btn-success">Nuevo CCF</button>
+          </div>
+          <div class="col-6 d-flex justify-content-start">
+            <button class="btn btn-warning">Editar CCF</button>
+          </div>
+        </div>
+        <div class="row">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                      <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Orden Column -->
+            <ng-container matColumnDef="orden">
+              <th mat-header-cell *matHeaderCellDef> Orden </th>
+              <td mat-cell *matCellDef="let element"> {{element.orden}} </td>
+            </ng-container>
+
+            <!-- Emisión Column -->
+            <ng-container matColumnDef="emision">
+              <th mat-header-cell *matHeaderCellDef> Emisión </th>
+              <td mat-cell *matCellDef="let element"> {{element.emision}} </td>
+            </ng-container>
+
+            <!-- Comprador Column -->
+            <ng-container matColumnDef="comprador">
+              <th mat-header-cell *matHeaderCellDef> Comprador </th>
+              <td mat-cell *matCellDef="let element"> {{element.comprador}} </td>
+            </ng-container>
+
+            <!-- Vendedor Column -->
+            <ng-container matColumnDef="vendedor">
+              <th mat-header-cell *matHeaderCellDef> Vendedor </th>
+              <td mat-cell *matCellDef="let element"> {{element.vendedor}} </td>
+            </ng-container>
+
+            <!-- Descripción Column -->
+            <ng-container matColumnDef="Descripcion">
+              <th mat-header-cell *matHeaderCellDef> Descripción </th>
+              <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+            </ng-container>
+
+            <!-- Pag Column -->
+            <ng-container matColumnDef="Pag">
+              <th mat-header-cell *matHeaderCellDef> Pag </th>
+              <td mat-cell *matCellDef="let element"> {{element.Pag}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

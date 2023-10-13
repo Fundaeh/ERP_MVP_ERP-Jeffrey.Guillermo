@@ -27,12 +27,10 @@ const routes: Routes = [
       {path: 'rrhh', component: RrhhComponent},
       {path: 'usercatalog', component: CatalogUserComponent},
       {path: 'ejemplo', component: EjemploComponent},
-     // {path: 'contabilidadhome/registroclientes', component: RegistroClientesComponent},
       {path: 'registro/registroclientes', component: ContabilidadregistroclientesComponent},
       {path: 'registro/registroproveedores', component: RegistroproveedoresComponent},
       {path: 'contabilidadhome/documentodte/creditofiscal', component: CreditofiscalComponent},
       {path: 'contabilidadhome/documentodte/consumidorfinal', component: ConsumidorfinalComponent},
-
       {path: '**', redirectTo: 'resultados' }
     ]
   }

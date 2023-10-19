@@ -15,9 +15,6 @@ import { RrhhComponent } from './rrhh/rrhh.component';
 import { CatalogUserComponent } from './catalog-user/catalog-user.component';
 import { RegistroClientesComponent } from './registro-clientes/registro-clientes.component';
 import { EjemploComponent } from './ejemplo/ejemplo.component';
-import { ContabilidadinicioComponent } from './contabilidadhome/contabilidadinicio/contabilidadinicio.component';
-import { ContabilidadregistroclientesComponent } from './registros/registroclientes/contabilidadregistroclientes.component';
-import { CreditofiscalComponent } from './contabilidadhome/documentodte/creditofiscal/creditofiscal.component';
 import { ConsumidorfinalComponent } from './contabilidadhome/documentodte/consumidorfinal/consumidorfinal.component';
 import { RegistroproveedoresComponent } from './registros/registroproveedores/registroproveedores.component';
 
@@ -27,16 +24,11 @@ import { RegistroproveedoresComponent } from './registros/registroproveedores/re
     FilterPipe,
     PdfViewComponent,
     FinanzasComponent,
-    ContabilidadComponent,
     RrhhComponent,
     CatalogUserComponent,
     RegistroClientesComponent,
     EjemploComponent,
-    ContabilidadinicioComponent,
-    ContabilidadregistroclientesComponent,
     RegistroproveedoresComponent,
-    CreditofiscalComponent,
-    ConsumidorfinalComponent,
     RegistroproveedoresComponent,
   ],
   imports: [

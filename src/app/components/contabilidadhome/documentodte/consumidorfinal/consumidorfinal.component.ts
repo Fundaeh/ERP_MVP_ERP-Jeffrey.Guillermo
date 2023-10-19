@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export interface PeriodicElement {
   id:number;
@@ -21,7 +21,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './consumidorfinal.component.html',
   styleUrls: ['./consumidorfinal.component.css']
 })
-export class ConsumidorfinalComponent {
+export class ConsumidorfinalComponent implements OnInit {
 
   ngOnInit(): void {
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import Swal from 'sweetalert2';
@@ -8,7 +8,7 @@ import { MenuI } from '../../interfaces/Contabilidad/menucontabilidad'
   templateUrl: './contabilidad.component.html',
   styleUrls: ['./contabilidad.component.css']
 })
-export class ContabilidadComponent {
+export class ContabilidadComponent implements OnInit{
   form: FormGroup;
 
   creditdoFiscal: boolean = false;
@@ -25,6 +25,9 @@ export class ContabilidadComponent {
   constructor(public service:DataService, private fb: FormBuilder) {
     // console.log(service.desplegar);
     this.form = this.fb.group({})
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   comprobarenvio(){

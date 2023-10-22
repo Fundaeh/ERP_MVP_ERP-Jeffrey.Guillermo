@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 export interface PeriodicElement {
   id:number;
   orden: number;

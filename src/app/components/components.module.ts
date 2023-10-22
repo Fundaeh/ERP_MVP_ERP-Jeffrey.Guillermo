@@ -17,6 +17,8 @@ import { RegistroClientesComponent } from './registro-clientes/registro-clientes
 import { EjemploComponent } from './ejemplo/ejemplo.component';
 import { ConsumidorfinalComponent } from './contabilidadhome/documentodte/consumidorfinal/consumidorfinal.component';
 import { RegistroproveedoresComponent } from './registros/registroproveedores/registroproveedores.component';
+import { LoginComponent } from './login/login.component';
+import { DistribucioncompletaComponent } from './distribucioncompleta/distribucioncompleta.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { RegistroproveedoresComponent } from './registros/registroproveedores/re
     RegistroClientesComponent,
     EjemploComponent,
     RegistroproveedoresComponent,
-    RegistroproveedoresComponent,
+    RegistroproveedoresComponent
   ],
   imports: [
     CommonModule,

@@ -15,12 +15,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { HomeComponent } from './components/home/home.component';
+import { DistribucioncompletaComponent } from './components/distribucioncompleta/distribucioncompleta.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DistribucioncompletaComponent
   ],
   imports: [
     CommonModule,

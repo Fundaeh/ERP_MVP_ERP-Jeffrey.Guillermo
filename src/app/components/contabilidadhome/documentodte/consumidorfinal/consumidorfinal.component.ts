@@ -21,6 +21,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./consumidorfinal.component.css']
 })
 export class ConsumidorfinalComponent implements OnInit {
+  public verMenu:boolean = false;
 
   ngOnInit(): void {
 

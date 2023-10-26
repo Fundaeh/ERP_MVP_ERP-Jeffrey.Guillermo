@@ -23,6 +23,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class CreditofiscalComponent implements OnInit {
 
+  public verMenu:boolean = false;
+
   ngOnInit(): void {
 
   }

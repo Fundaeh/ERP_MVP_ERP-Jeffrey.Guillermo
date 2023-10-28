@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   title = 'MVP-v3';
 
+  constructor(public service:DataService) {
+  }
+
+  cerrarMenus() {
+    this.service.closeMenus();
+  }
 }

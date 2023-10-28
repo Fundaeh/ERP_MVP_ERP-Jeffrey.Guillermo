@@ -1,8 +1,7 @@
-<nav class="nav fixed-top">
-  <div class="menu">
+<nav class="nav fixed-top flex flex-col">
+  <div class="nav-primario">
     <div class="menu-hamburguesa">
-      <!-- (click)="onClick()"   -->
-      <button class="abrir-hamburguesa" ><img class="icon-ham" src="../assets/iconos/menuHamburguesa.svg" alt="Menu"></button>
+      <button class="abrir-hamburguesa" (click)="desplegarMenuHam()"><img class="icon-ham" src="../assets/iconos/menuHamburguesa.svg" alt="Menu"></button>
       <h1 class="name-page">Bee<span>contable</span></h1>
     </div>
     <div class="menu-sesion">
@@ -49,15 +48,25 @@
       <img class="icono-sesion" src="../assets/iconos/Icono Configuración-05.png" alt="Configuración">
     </div>
   </div>
-
-  <div class="d-flex union">
-    <button routerLink="/resultados/resultados" class="boton-enviar" >
-      <!-- (click)="mandarDato()" -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-      viewBox="0 0 16 16">
-      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-      </svg>
-    </button>
-    <!-- <input type="text" [(ngModel)]="valor" placeholder="Buscar en este ERP Contable"  class=" buscador"> -->
+  <div class="nav-secundario">
+    <div class="nav-sec-fondo"></div>
+    <div class="nav-sec-contenido">
+      <div class="buscador">
+        <button routerLink="/resultados/resultados" class="buscador-boton" >
+          <!-- (click)="mandarDato()" -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+        <input type="text" [(ngModel)]="valor" placeholder="Buscar en este ERP Contable">
+      </div>
+    </div>
+    <div class="menu-inicio" (click)="desplegarMenuSuperior()">
+      <!-- -->
+      <p class="menu-inicio-text">Inicio</p>
+      <img class="menu-inicio-icono" [ngClass]="dataService.isOpenMenuSuperior == false ? '' : 'rotated'"
+         src="../assets/iconos/Icono_Desplegable.png" alt="inicio">
+    </div>
   </div>
 </nav>

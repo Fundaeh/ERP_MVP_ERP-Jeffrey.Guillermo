@@ -5,17 +5,24 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { MenuIntermedioComponent } from './menu-intermedio/menu-intermedio.component';
+import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+import { MenuSuperiorComponent } from './menu-superior/menu-superior.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     NavComponent,
+    MenuSuperiorComponent,
+    MenuLateralComponent,
     FooterComponent,
     MenuIntermedioComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [ HttpClientModule, CommonModule, FormsModule],
   exports: [
     NavComponent,
     FooterComponent,
+    MenuSuperiorComponent,
+    MenuLateralComponent,
     MenuIntermedioComponent,
   ],
 })

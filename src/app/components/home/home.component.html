@@ -1,12 +1,22 @@
 <div class="wrapper">
+
   <app-nav></app-nav>
-  <div class="">
-    <div class="">
-      <div class="page-content" style="padding: 100px;">
-        <!-- <app-menu-intermedio></app-menu-intermedio> -->
+
+  <div class="container-fluid d-flex flex-row">
+    
+    <div class="menu-lateral" [ngClass]="service.isOpen == true ? 'menu-lateral-extendido' : 'col-3'">
+      <app-menu-lateral></app-menu-lateral>
+    </div>
+    
+    <div class="contenido-principal d-flex flex-column" [ngClass]="service.isOpen == true ? 'contenido-extendido' : ''">
+      <app-menu-superior></app-menu-superior>
+      <div class="contenido" (click)="cerrarMenus()">
         <router-outlet></router-outlet>
       </div>
     </div>
+
   </div>
+
   <app-footer></app-footer>
+
 </div>

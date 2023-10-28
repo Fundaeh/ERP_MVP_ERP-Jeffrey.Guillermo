@@ -1,4 +1,4 @@
-<div class="container" >
+<div class="container-fluid" >
   <div class="row">
     <div class="container  col-12 col-md-3 "*ngIf="!verMenu" [ngClass]=" !verMenu ? 'col-12 col-md-3' : ''">
       <div class="card shadow-2">
@@ -14,7 +14,7 @@
             <div class="row pb-3" (click)="verMenu=!verMenu">
               <div class="col-1">
                 <img
-                  [ngStyle]="{ 'transform': verMenu ? 'rotate(180deg)' : 'rotate(0deg)' }"
+                  [ngStyle]="{ 'transform': verMenu ? 'rotate(180deg)' : 'rotate(0deg)','transition': 'all 0.25s' }"
                   class="img-fluid"
                     src="assets/iconos/Icono_Desplegable_Gris-04.png"
                     alt="Regresar"

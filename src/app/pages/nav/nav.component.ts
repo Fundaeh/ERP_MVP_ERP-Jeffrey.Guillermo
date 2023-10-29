@@ -18,8 +18,10 @@ export class NavComponent {
   myControl = new FormControl('');
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]> | undefined;
+  menuInicioShow: boolean = false;
 
-  constructor(private dataService:DataService) {}
+  constructor(public dataService:DataService) {
+  }
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -38,7 +40,11 @@ export class NavComponent {
     console.log(this.valor);
   }
 
-  onClick() {
+  desplegarMenuHam() {
     this.dataService.toggle();
+  }
+
+  desplegarMenuSuperior() {
+    this.dataService.toggleMenuSuperior();
   }
 }

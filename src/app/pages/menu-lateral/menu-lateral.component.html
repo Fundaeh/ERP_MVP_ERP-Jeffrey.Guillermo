@@ -1,0 +1,23 @@
+<div class="container-fluid ">
+  <div class="aside">
+    <div class="aside-head btn-contabilidad">
+      <img
+        class="head-img"
+        src="/assets/iconos/Logo-Contabilidad.png"
+        alt="Contabilidad"
+      />
+      <h3>CONTABILIDAD</h3>
+    </div>
+    <div class="aside-options">
+      <ng-container *ngFor="let menu of menus">
+        <div
+          (click)="tituloS = menu.titulo; menu.funcion "
+          [ngClass]="[menu.titulo == tituloS ? 'btn-opt' : '', 'aside-opt']"
+        >
+          <img class="head-img img-option" [src]="menu.Logo" alt="Finanzas" />
+          <h3>{{ menu.titulo }}</h3>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

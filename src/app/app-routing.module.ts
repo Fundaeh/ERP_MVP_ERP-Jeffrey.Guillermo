@@ -8,13 +8,8 @@ import { DistribucioncompletaComponent } from './components/distribucioncompleta
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  // { path: '', loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule) },
   { path: '', component: HomeComponent, children: distribucion_rutas },
   { path: '', component: DistribucioncompletaComponent, children: distribucion_completa_rutas },
-
-    // { path: '', component: NavComponent },
-    // { path: '', component: FooterComponent},
- // { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({

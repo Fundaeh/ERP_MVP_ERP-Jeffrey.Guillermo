@@ -29,6 +29,7 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
+  transition: all 0.25;
 }
 .aside-opt {
   padding: 20px;

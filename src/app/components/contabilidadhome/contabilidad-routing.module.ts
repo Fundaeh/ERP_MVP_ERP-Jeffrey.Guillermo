@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: 'contabilidadinicio', component:ContabilidadinicioComponent},
   {path: 'documentodte/consumidorfinal', component:ConsumidorfinalComponent},
   {path: 'documentodte/creditofiscal', component:CreditofiscalComponent},
-  {path: 'contabilidad', component:ContabilidadComponent},
+  {path: 'ingresoconsumidorfinal', component:ContabilidadComponent},
 ];
 
 @NgModule({

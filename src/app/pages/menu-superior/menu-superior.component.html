@@ -1,15 +1,15 @@
 <div class="menu-inicio container-sm" [ngClass]="service.isOpenMenuSuperior == true ? '' : 'menu-inicio-hide'">
   <!--  -->
   <!-- cambiar a true displayNo-->
-  <a href="/resultados/finanzas" (click)="toggleMenuOption(1)" class="btn-main" [ngClass]="service.isMenuSelected(1) ? 'btn-activo':''">
+  <a  (click)="toggleMenuOption(1); opcionMenu('finanzas')" class="btn-main"  [ngClass]="service.isMenuSelected(1) ? 'btn-activo':''">
     <img class="head-img" src="/assets/iconos/Logo-Finanzas.png" alt="finanzas" />
     FINANZAS</a>
 
-  <a href="/contabilidad/contabilidad" (click)="toggleMenuOption(2)" class="btn-main" [ngClass]="service.isMenuSelected(2) ? 'btn-activo':''">
+  <a  (click)="toggleMenuOption(2); opcionMenu('contabilidad')" class="btn-main" [ngClass]="service.isMenuSelected(2) ? 'btn-activo':''">
     <img class="head-img" src="/assets/iconos/Logo-Contabilidad.png" alt="contabilidad" />
     CONTABILIDAD</a>
-  
-  <a href="/resultados/rrhh" (click)="toggleMenuOption(3)" class="btn-main" [ngClass]="service.isMenuSelected(3) ? 'btn-activo':''">
+
+  <a  (click)="toggleMenuOption(3); opcionMenu('rrhh')" class="btn-main" [ngClass]="service.isMenuSelected(3) ? 'btn-activo':''">
     <img class="head-img" src="/assets/iconos/Logo-RRHH.png" alt="rrhh" />
     RRHH Y CLIENTES</a>
 </div>

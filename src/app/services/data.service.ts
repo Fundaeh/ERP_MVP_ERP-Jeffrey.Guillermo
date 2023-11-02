@@ -30,7 +30,7 @@ export class DataService {
   buscarDatos(nombre: string) {
     const params = new HttpParams()
       .set('nombre', nombre);
-  
+
     return this.http.get(`${this._url}?p=`, { params });
   }
 
@@ -62,7 +62,7 @@ export class DataService {
     this.changeNumber.emit(this.optMenu);
   }
   isMenuSelected(opt: number) {
-    console.log('entré con: ' + opt);
+    // console.log('entré con: ' + opt);
     return (opt == this.optMenu);
   }
 }

@@ -8,6 +8,7 @@ import { MenuIntermedioComponent } from './menu-intermedio/menu-intermedio.compo
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { MenuSuperiorComponent } from './menu-superior/menu-superior.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     MenuIntermedioComponent,
   ],
-  imports: [ HttpClientModule, CommonModule, FormsModule],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
+    RouterModule,
+  ],
   exports: [
     NavComponent,
     FooterComponent,

@@ -1,6 +1,6 @@
 <div class="container-fluid ">
   <div class="aside">
-    <div class="aside-head btn-contabilidad">
+    <div class="aside-head">
       <img
         class="head-img"
         src="/assets/iconos/Logo-Contabilidad.png"
@@ -13,21 +13,15 @@
         <a [routerLink]="menu.ruta" type="button" class="btn btn-sm" data-bs-toggle="tooltip" data-bs-placement="right">
 
           <div
+            class="aside-opt row"
             (click)="tituloS = menu.titulo"
-            [ngClass]="[menu.titulo == tituloS ? 'btn-opt' : '', 'aside-opt','row']"
+            [ngClass]="[menu.titulo == tituloS ? 'btn-opt' : '']"
           >
-            <div class="row">
-              <div class="col">
-                <img class="head-img img-option" [src]="menu.Logo" alt="Finanzas" />
-              </div>
-              <div class="col">
-                <h3>{{ menu.titulo }}</h3>
-              </div>
-            </div>
-
+            <!--<img class="img-option" [src]="menu.Logo" alt="Finanzas" />-->
+            <h3>{{ menu.titulo }}</h3>
           </div>
-        </a>
 
+        </a>
       </ng-container>
     </div>
   </div>

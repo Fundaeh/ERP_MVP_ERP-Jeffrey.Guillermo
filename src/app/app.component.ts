@@ -40,8 +40,4 @@ export class AppComponent implements OnInit {
     console.log(this.valor);
   }
 
-  onClick() {
-    this.dataService.toggle();
-  }
-
 }

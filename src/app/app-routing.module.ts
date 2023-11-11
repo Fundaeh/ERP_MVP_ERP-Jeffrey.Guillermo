@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import {  distribucion_rutas } from './pages/routes/distribucion-completa.routes';
+import { distribucion_completa_rutas } from './pages/routes/contenido-completo.routes';
+import { DistribucioncompletaComponent } from './components/distribucioncompleta/distribucioncompleta.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '', loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule) },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', component: HomeComponent, children: distribucion_rutas },
+  { path: '', component: DistribucioncompletaComponent, children: distribucion_completa_rutas },
 ];
 
 @NgModule({

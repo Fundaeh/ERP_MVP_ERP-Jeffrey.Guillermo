@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## libraries
+
+### Bootstrap 5.3.2
+npm i bootstrap@5.3.2
+
+### ngx-extended-pdf-viewer
+npm i ngx-extended-pdf-viewer
+
+###  boxicons
+npm install boxicons --save
+
+### Angular Material
+ng add @angular/material

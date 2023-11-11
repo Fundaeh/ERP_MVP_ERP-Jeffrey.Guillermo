@@ -1,30 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import Swal from 'sweetalert2';
-import { MenuI } from '../../interfaces/Contabilidad/menucontabilidad'
+
 @Component({
   selector: 'app-contabilidad',
   templateUrl: './contabilidad.component.html',
-  styleUrls: ['./contabilidad.component.css']
+  styleUrls: ['./contabilidad.component.css'],
 })
-export class ContabilidadComponent {
+export class ContabilidadComponent implements OnInit{
   form: FormGroup;
 
   creditdoFiscal: boolean = false;
   consumidorFinal: boolean = true;
   public mostrar: number = 1;
-  public tituloS:string="";
-  public menus: MenuI[] = [
-    {"titulo": "Inicio", "Logo": "../../../assets/iconos/Logo-Contabilidad.png"},
-    {"titulo": "Registro clientes", "Logo": "../../../assets/iconos/Logo-Contabilidad.png"},
-    {"titulo": "Registro proveedores", "Logo": "../../../assets/iconos/Logo-Contabilidad.png"},
-    {"titulo": "Factura de credito fiscal", "Logo": "../../../assets/iconos/Logo-Contabilidad.png", "funcion": 'abrirCreditoFiscal'},
-    {"titulo": "Factura de consumidor final", "Logo": "../../../assets/iconos/Logo-Contabilidad.png", "funcion": 'abrirconsumidorFinal'}
-  ];
+
   constructor(public service:DataService, private fb: FormBuilder) {
-    // console.log(service.desplegar);
+    //console.log('isOpen' + service.isOpen);
     this.form = this.fb.group({})
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   comprobarenvio(){

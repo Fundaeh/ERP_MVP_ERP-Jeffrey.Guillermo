@@ -21,13 +21,16 @@ export class ContabilidadComponent implements OnInit{
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
+    this.realizarEnvio();
   }
 
   comprobarenvio(){
-    console.log('entro');
+    console.log(this.mostrar);
+    let content2 = document.getElementById(this.mostrar.toString());
+    console.log(content2);
 
-    let a = document.getElementById('envio');
-    this.mostrar === 3 ? a?.click(): '';
+    // let a = document.getElementById('envio');
+    // this.mostrar === 3 ? a?.click(): '';
   }
 
   realizarEnvio(){

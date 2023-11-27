@@ -1,0 +1,38 @@
+// Custom variables
+$soft: #f0f0f0;
+$medium: #DDDDDD;
+$soft-dark: #343a40;
+$medium-dark: #212529;
+
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+// New Variable colors
+$custom-theme-colors: (
+  "custom": $white,
+  "custom-soft": $soft,
+  "custom-medium": $medium,
+);
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+@include color-mode(dark) {
+  
+  .logo-dark-text {
+    color: $white;
+  }
+  .invert-img-color {
+    filter: invert(1);
+  }
+  .bg-custom {
+    background-color: $black!important;
+  }
+  .bg-custom-medium {
+    background-color: $medium-dark!important;
+  }
+  .bg-custom-soft {
+    background-color: $soft-dark!important;
+  }
+
+}

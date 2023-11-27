@@ -1,14 +1,32 @@
 <nav class="nav fixed-top flex flex-col">
-  <div class="nav-primario">
+  <div class="nav-primario bg-custom">
     <div class="menu-hamburguesa">
-      <button class="abrir-hamburguesa" (click)="desplegarMenuHam()"><img class="icon-ham" src="../assets/iconos/menuHamburguesa.svg" alt="Menu"></button>
-      <h1 class="name-page">Bee<span>contable</span></h1>
+      <button class="abrir-hamburguesa" (click)="desplegarMenuHam()"><img class="icon-ham invert-img-color" src="../assets/iconos/menuHamburguesa.svg" alt="Menu"></button>
+      <h1 class="name-page">Bee<span class="logo-dark-text">contable</span></h1>
     </div>
     <div class="menu-sesion">
+      <div class="btn-group">
+        <button id="dropdownMenuButton1" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="invert-img-color" src="../assets/iconos/menuTheme.svg" alt="theme">
+        </button>
+        <ul aria-labelledby="dropdownMenuButton1" class="dropdown-menu">
+          <li (click)="dataService.cambiarTema('light')" class="dropdown-item" [ngClass]=" dataService.tema == 'light' ? 'bg-custom-soft' : ''">
+            <p>Claro</p> <img class="invert-img-color" src="../assets/iconos/menuThemeLight.svg" alt="theme">
+          </li>
+          <li (click)="dataService.cambiarTema('dark')" class="dropdown-item" [ngClass]=" dataService.tema == 'dark' ? 'bg-custom-soft' : ''">
+            <p>Oscuro</p> <img class="invert-img-color" src="../assets/iconos/menuThemeDark.svg" alt="theme">
+          </li>
+          <hr>
+          <li (click)="dataService.cambiarEscalaGrises()" class="dropdown-item" [ngClass]="dataService.escalaGrises == false ? '' : 'escalaGrises bg-custom-soft'">
+            <p>Gris</p>
+            <img class="invert-img-color" src="../assets/iconos/check.svg" alt="theme" [ngClass]="dataService.escalaGrises==true?'':'d-none'">
+          </li>
+        </ul>
+      </div>
       <p class="contador">0001</p>
       <div class="icono-sesion">
         <img class="icono-sesion" src="../assets/iconos/Icono Usuario-05.png" alt="Usuario">
-        <div class="menu-vertical">
+        <div class="menu-vertical bg-custom-soft">
           <div class="menu-vertical-head">
             <h3>Sergio Nortero</h3>
             <p>Estudiante 001</p>
@@ -45,26 +63,26 @@
           </div>
         </div>
       </div>
-      <img class="icono-sesion" src="../assets/iconos/Icono Configuración-05.png" alt="Configuración">
+      <img class="icono-sesion invert-img-color" src="../assets/iconos/Icono Configuración-05.png" alt="Configuración">
     </div>
   </div>
   <div class="nav-secundario">
-    <div class="nav-sec-fondo"></div>
+    <div class="nav-sec-fondo invert-img-color"></div>
     <div class="nav-sec-contenido">
-      <div class="buscador">
-        <button routerLink="/resultados/resultados" class="buscador-boton" >
+      <div class="buscador bg-custom-medium">
+        <button routerLink="/resultados/resultados" class="buscador-boton bg-custom-medium" >
           <!-- (click)="mandarDato()" -->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
           viewBox="0 0 16 16">
           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
         </button>
-        <input type="text" [(ngModel)]="valor" placeholder="Buscar en este ERP Contable">
+        <input class="bg-custom-medium" type="text" [(ngModel)]="valor" placeholder="Buscar en este ERP Contable">
       </div>
     </div>
     <div class="menu-inicio" (click)="desplegarMenuSuperior()">
       <!-- -->
-      <p class="menu-inicio-text">Inicio</p>
+      <p class="menu-inicio-text text-custom">Inicio</p>
       <img class="menu-inicio-icono" [ngClass]="dataService.isOpenMenuSuperior == false ? '' : 'rotated'"
          src="../assets/iconos/Icono_Desplegable.png" alt="inicio">
     </div>

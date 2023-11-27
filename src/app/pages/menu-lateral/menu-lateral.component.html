@@ -1,8 +1,8 @@
 <div class="container-fluid ">
-  <div class="aside">
-    <div class="aside-head">
+  <div class="aside bg-custom-medium">
+    <div [ngClass]="service.isOpen != true ? 'aside-head' : 'closed-aside-head'">
       <img
-        class="head-img"
+        class="aside-head-img"
         src="/assets/iconos/Logo-Contabilidad.png"
         alt="Contabilidad"
       />
@@ -10,15 +10,18 @@
     </div>
     <div class="aside-options">
       <ng-container *ngFor="let menu of menus">
-        <a [routerLink]="menu.ruta" type="button" class="btn btn-sm" data-bs-toggle="tooltip" data-bs-placement="right">
+        <a [routerLink]="menu.ruta" type="button" class="btn btn-sm" data-bs-toggle="tooltip" data-bs-placement="right"
+        [ngClass]="[menu.titulo == tituloS ? 'btn-opt' : '']">
 
           <div
-            class="aside-opt row"
+            class="bg-custom-soft"
             (click)="tituloS = menu.titulo"
-            [ngClass]="[menu.titulo == tituloS ? 'btn-opt' : '']"
+            [ngClass]="[service.isOpen != true ? 'aside-opt' : 'closed-aside-opt']"
+            bTooltip title="{{menu.titulo}}"
           >
-            <!--<img class="img-option" [src]="menu.Logo" alt="Finanzas" />-->
+            <img [src]="menu.Logo" alt="{{menu.titulo}}" />
             <h3>{{ menu.titulo }}</h3>
+            
           </div>
 
         </a>

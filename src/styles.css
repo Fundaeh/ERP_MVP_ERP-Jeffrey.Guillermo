@@ -3,9 +3,8 @@
 html, body { height: auto; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/*html {
+.grayscale {
   -moz-filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  filter: gray; /* IE6-9 *
-  filter: grayscale(100%);
-}*/
+  filter: grayscale(100%); /* IE6-9 */
+}

@@ -2,15 +2,15 @@
 
   <app-nav></app-nav>
 
-  <div class="container-fluid d-flex flex-row">
+  <div class="container-fluid d-flex flex-row contenedor-padre">
     
-    <div class="menu-lateral" [ngClass]="service.isOpen == true ? 'menu-lateral-extendido' : 'col-3'">
+    <div class="menu-lateral" [ngClass]="service.isOpen == true ? 'menu-lateral-contraido' : 'col-3'">
       <app-menu-lateral></app-menu-lateral>
     </div>
     
-    <div class="contenido-principal d-flex flex-column" [ngClass]="service.isOpen == true ? 'contenido-extendido' : ''">
+    <div class="contenido-principal d-flex flex-column">
       <app-menu-superior></app-menu-superior>
-      <div class="contenido" (click)="cerrarMenus()">
+      <div class="contenido bg-custom-medium" (click)="cerrarMenus()">
         <router-outlet></router-outlet>
       </div>
     </div>

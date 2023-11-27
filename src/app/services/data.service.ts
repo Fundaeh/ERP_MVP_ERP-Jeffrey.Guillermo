@@ -7,13 +7,17 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class DataService {
 
   //URL de la base
-  _url = 'http://localhost:3000/pruebaUno';
+  _url = 'http://localhost:3010/prueba';
   pdfName: string = '';
 
   //Variable que almacenara el valor a pasar
   nombreUsuario: string = 'Debe escribir un nombre a buscar';
   arregloFiltrado: Array<any> = [];
   desplegar:boolean = false;
+
+  /* Variables para tema del sitio */
+  escalaGrises = false;
+  tema = 'light';
 
   constructor( private http: HttpClient ) {
     console.log("Servicio Funcionando");
@@ -64,5 +68,51 @@ export class DataService {
   isMenuSelected(opt: number) {
     // console.log('entré con: ' + opt);
     return (opt == this.optMenu);
+  }
+
+  /* Cambio de tema */
+  setStoredTheme = (theme:string) => localStorage.setItem('theme', theme)
+  getPreferredTheme = () => {
+    const storedTheme = localStorage.getItem('theme')
+    const storedColor = localStorage.getItem('themeColor')
+    
+    console.log("storedColor: " + storedColor)
+    if (storedColor!=null) {
+      this.escalaGrises = storedColor=='true';
+    }
+    if (storedTheme) {
+      return storedTheme
+    } else {
+      this.setStoredTheme("light");
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  cambiarTema(nuevoTema:string) {
+    if (nuevoTema != this.tema) {
+      let element = document.body;
+      
+      this.tema = nuevoTema;
+      this.setStoredTheme(nuevoTema);
+  
+      element.dataset['bsTheme'] = nuevoTema;
+    }
+  }
+  cambiarEscalaGrises(primeraVez=false) {
+    console.log(primeraVez)
+    console.log("entré a cambiar a gris?: " + this.escalaGrises);
+    let html = document.documentElement;
+    if (!primeraVez) {
+      this.escalaGrises = !this.escalaGrises;
+    }
+    console.log("escalaGrises: " + this.escalaGrises);
+  
+    if (this.escalaGrises) {
+      html.classList.add('grayscale');
+    } else {
+      html.classList.remove('grayscale');
+    }
+    localStorage.setItem('themeColor', this.escalaGrises ? 'true':'false');
   }
 }

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-contabilidad',
   templateUrl: './contabilidad.component.html',
-  styleUrls: ['./contabilidad.component.css']
+  styleUrls: ['./contabilidad.component.css'],
 })
 export class ContabilidadComponent implements OnInit{
   form: FormGroup;
@@ -14,20 +14,23 @@ export class ContabilidadComponent implements OnInit{
   creditdoFiscal: boolean = false;
   consumidorFinal: boolean = true;
   public mostrar: number = 1;
-  
+
   constructor(public service:DataService, private fb: FormBuilder) {
     //console.log('isOpen' + service.isOpen);
     this.form = this.fb.group({})
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
+    this.realizarEnvio();
   }
 
   comprobarenvio(){
-    console.log('entro');
+    console.log(this.mostrar);
+    let content2 = document.getElementById(this.mostrar.toString());
+    console.log(content2);
 
-    let a = document.getElementById('envio');
-    this.mostrar === 3 ? a?.click(): '';
+    // let a = document.getElementById('envio');
+    // this.mostrar === 3 ? a?.click(): '';
   }
 
   realizarEnvio(){

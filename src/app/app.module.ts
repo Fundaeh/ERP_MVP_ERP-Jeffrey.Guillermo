@@ -37,7 +37,7 @@ import { DistribucioncompletaComponent } from './components/distribucioncompleta
     MatInputModule,
     MatPaginatorModule,
     MatAutocompleteModule,
-    NgxExtendedPdfViewerModule
+    NgxExtendedPdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

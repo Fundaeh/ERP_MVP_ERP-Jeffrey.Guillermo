@@ -28,8 +28,6 @@ export class NavComponent {
       startWith(''),
       map(value => this._filter(value || '')),
     );
-    this.dataService.cambiarTema(this.dataService.getPreferredTheme());
-    this.dataService.cambiarEscalaGrises(true);
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

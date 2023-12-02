@@ -8,7 +8,7 @@ import { ConsumidorfinalComponent } from './documentodte/consumidorfinal/consumi
 import { MatTableModule } from '@angular/material/table';
 import { ContabilidadComponent } from './contabilidad/contabilidad.component';
 import { RouterModule } from '@angular/router';
-
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     ContabilidadinicioComponent,
@@ -20,7 +20,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ContabilidadRoutingModule,
     MatTableModule,
-    RouterModule
+    RouterModule,
+    MatTabsModule
   ]
 })
 export class ContabilidadModule { }

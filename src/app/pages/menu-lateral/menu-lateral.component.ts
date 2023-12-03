@@ -20,23 +20,30 @@ export class MenuLateralComponent implements OnInit {
     this.opcionMenuService.changeString.subscribe((opcion)=>{
       this.titulo = this.opcionMenuService.getDatos();
       this.menus = this.menu(this.opcionMenuService.getDatos());
-
     });
 
   }
 
   menu(valor:string){
     let menu : object = {
+      "configuracion": [
+        {titulo: "titulo", logo: "../assets/iconos/IconoConfiguración-Gris.png"},
+        {titulo: "Generales", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""},
+        {titulo: "Contable", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""},
+        {titulo: "Cambio de contraseña", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""},
+        {titulo: "Historial de cambios", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""}
+      ],
       "contabilidad":[
-        {titulo: "Inicio", Logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
-        {titulo: "Registro clientes", Logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
-        {titulo: "Registro proveedores", Logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
-        {titulo: "Factura de credito fiscal", Logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/documentodte/creditofiscal"},
-        {titulo: "Factura de consumidor final", Logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/documentodte/consumidorfinal"}
+        {titulo: "titulo", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
+        {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
+        {titulo: "Registro clientes", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
+        {titulo: "Registro proveedores", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
+        {titulo: "Factura de credito fiscal", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/documentodte/creditofiscal"},
+        {titulo: "Factura de consumidor final", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/documentodte/consumidorfinal"}
       ],
       "finanzas":[
-        {titulo: "Inicio", Logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
-
+        {titulo: "titulo", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
+        {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""}
       ],
       "rrhh":[
 

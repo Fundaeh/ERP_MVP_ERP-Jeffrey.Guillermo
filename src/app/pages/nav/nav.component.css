@@ -114,8 +114,9 @@ span {
   font-weight: bold;
 }
 .icono-sesion {
-  width: 30px;
-  height: 30px;
+  display: flex;
+  width: 25px;
+  height: 20px;
 }
 .menu-vertical {
   position: absolute;
@@ -184,6 +185,7 @@ span {
   height: 20px;
   width: 15px;
   transition: all 0.25s;
+  z-index: -1;
 }
 .rotated {
   transform: rotate(180deg);
@@ -199,4 +201,7 @@ span {
 .dropdown-item:active {
   background-color: var(--custom)!important;
   color: var(--custom);
+}
+.dropdown-menu hr {
+  margin: 5px 0!important;
 }

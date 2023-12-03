@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
+import { MenuOpcionService } from 'src/app/services/menuOpcion/menu-opcion.service';
 
 @Component({
   selector: 'app-nav',
@@ -20,7 +21,7 @@ export class NavComponent {
   filteredOptions: Observable<string[]> | undefined;
   menuInicioShow: boolean = false;
 
-  constructor(public dataService:DataService) {
+  constructor(public dataService:DataService, public opcionMenuService:MenuOpcionService) {
   }
 
   ngOnInit() {
@@ -46,5 +47,9 @@ export class NavComponent {
 
   desplegarMenuSuperior() {
     this.dataService.toggleMenuSuperior();
+  }
+  
+  opcionMenu(opcion:string) {
+    this.opcionMenuService.setDatos(opcion);
   }
 }

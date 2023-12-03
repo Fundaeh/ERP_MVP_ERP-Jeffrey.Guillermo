@@ -66,7 +66,6 @@ export class DataService {
     this.changeNumber.emit(this.optMenu);
   }
   isMenuSelected(opt: number) {
-    // console.log('entré con: ' + opt);
     return (opt == this.optMenu);
   }
 
@@ -75,8 +74,6 @@ export class DataService {
   getPreferredTheme = () => {
     const storedTheme = localStorage.getItem('theme')
     const storedColor = localStorage.getItem('themeColor')
-    
-    console.log("storedColor: " + storedColor)
     if (storedColor!=null) {
       this.escalaGrises = storedColor=='true';
     }
@@ -100,14 +97,10 @@ export class DataService {
     }
   }
   cambiarEscalaGrises(primeraVez=false) {
-    console.log(primeraVez)
-    console.log("entré a cambiar a gris?: " + this.escalaGrises);
     let html = document.documentElement;
     if (!primeraVez) {
       this.escalaGrises = !this.escalaGrises;
-    }
-    console.log("escalaGrises: " + this.escalaGrises);
-  
+    }  
     if (this.escalaGrises) {
       html.classList.add('grayscale');
     } else {

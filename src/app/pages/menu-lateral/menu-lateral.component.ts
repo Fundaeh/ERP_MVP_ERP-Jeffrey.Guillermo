@@ -10,7 +10,6 @@ import { MenuOpcionService } from 'src/app/services/menuOpcion/menu-opcion.servi
   styleUrls: ['./menu-lateral.component.css']
 })
 export class MenuLateralComponent implements OnInit {
-  public titulo:string = "";
   public tituloS:string="";
   public menus: Array<MenuLateral> = []
 
@@ -18,23 +17,24 @@ export class MenuLateralComponent implements OnInit {
 
   ngOnInit() {
     this.opcionMenuService.changeString.subscribe((opcion)=>{
-      this.titulo = this.opcionMenuService.getDatos();
       this.menus = this.menu(this.opcionMenuService.getDatos());
     });
-
+    
+    /* Después de iniciar sesión se cargará esta opción por defecto */
+    this.menus = this.menu("contabilidad");
   }
 
   menu(valor:string){
     let menu : object = {
       "configuracion": [
-        {titulo: "titulo", logo: "../assets/iconos/IconoConfiguración-Gris.png"},
+        {titulo: "Configuración", logo: "../assets/iconos/IconoConfiguración-Gris.png"},
         {titulo: "Generales", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""},
         {titulo: "Contable", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""},
         {titulo: "Cambio de contraseña", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""},
         {titulo: "Historial de cambios", logo: "../assets/iconos/IconoConfiguración-Gris.png", ruta: ""}
       ],
       "contabilidad":[
-        {titulo: "titulo", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
+        {titulo: "Contabilidad", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
         {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
         {titulo: "Registro clientes", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
         {titulo: "Registro proveedores", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},
@@ -42,15 +42,14 @@ export class MenuLateralComponent implements OnInit {
         {titulo: "Factura de consumidor final", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/documentodte/consumidorfinal"}
       ],
       "finanzas":[
-        {titulo: "titulo", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
+        {titulo: "Finanzas", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
         {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""}
       ],
       "rrhh":[
-
+        {titulo: "RRHH", logo: "../../../assets/iconos/Logo-Contabilidad.png"}
       ]
     }
-  return menu[valor as keyof typeof menu] ;
-
+    return menu[valor as keyof typeof menu] ;
   }
 
 }

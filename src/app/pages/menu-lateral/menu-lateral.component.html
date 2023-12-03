@@ -4,13 +4,13 @@
       <img
         class="aside-head-img"
         src={{menus[0].logo}}
-        alt="Contabilidad"
+        alt={{menus[0].titulo}}
       />
-      <h3>{{titulo | uppercase}}</h3>
+      <h3>{{menus[0].titulo | uppercase}}</h3>
     </div>
     <div class="aside-options">
       <ng-container *ngFor="let menu of menus"> 
-        <ng-container *ngIf="menu.titulo != 'titulo'">
+        <ng-container *ngIf="menu.titulo.toUpperCase() != menus[0].titulo.toUpperCase()">
           <a [routerLink]="menu.ruta" type="button" class="btn btn-sm" data-bs-toggle="tooltip" data-bs-placement="right"
           [ngClass]="[menu.titulo == tituloS ? 'btn-opt' : '']">
 

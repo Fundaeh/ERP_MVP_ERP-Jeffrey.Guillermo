@@ -4,14 +4,8 @@
   background-color: #DDA800;
   display: flex;
   flex-direction: column;
-  /*margin-bottom: 110px;*/
-  /* border-bottom: 1px solid #DDA800; */
-  /* box-shadow: 0px 2px 5px 0px #C4C4C4;
-  -webkit-box-shadow: 0px 2px 5px 0px #C4C4C4;
-  -moz-box-shadow: 0px 2px 5px 0px #C4C4C4; */
 }
 .nav-primario {
-  
   width: 100%;
   height: 70px;
   padding: 20px;
@@ -93,7 +87,6 @@ span {
   outline: none;
 }
 .buscador-boton {
-
   border: none;
 }
 /*-------- FIN BOTON BUSCADOR --------*/
@@ -113,10 +106,16 @@ span {
   padding-top: 20px;
   font-weight: bold;
 }
-.icono-sesion {
-  display: flex;
+.contenedor-sesion {
+  /* No cambiar esta propiedad, porque ayuda al comportamiento del hover del menu */
+  padding: 15px 0; 
+}
+.icono-menu {
   width: 25px;
   height: 20px;
+}
+.contenedor-sesion:hover > .menu-vertical {
+  display: block;
 }
 .menu-vertical {
   position: absolute;
@@ -128,9 +127,9 @@ span {
   top: 55px;
   text-align: center;
   border-radius: 10px;
-  box-shadow: -5px 3px 9px 0px rgba(99,96,96,0.74);
-  -webkit-box-shadow: -5px 3px 9px 0px rgba(99,96,96,0.74);
-  -moz-box-shadow: -5px 3px 9px 0px rgba(99,96,96,0.74);
+  box-shadow: -5px 3px 9px 0px rgba(37, 36, 36, 0.7);
+  -webkit-box-shadow: -5px 3px 9px 0px rgba(37, 36, 36, 0.7);
+  -moz-box-shadow: -5px 3px 9px 0px rgba(37, 36, 36, 0.7);
 }
 .menu-vertical:hover {
   display: block;
@@ -145,29 +144,33 @@ span {
   margin: 0;
   font-weight: 500;
 }
+.menu-vertical-head p {
+  margin: 0 0 8px;
+}
 .config-option {
   width: 250px;
   display: flex;
+  align-items: center;
   gap: 5px;
   padding: 5px 20px;
   font-size: 16px;
 }
 .config-option p {
   padding-top: 7px;
+  margin-bottom: 7px!important;
+  
 }
 .config-option:last-of-type {
   border-radius: 0px 0px 10px 10px;
 }
 .config-option:hover{
-  background-color: rgb(213, 210, 210);
+  background-color: var(--bs-border-color);
   cursor: pointer;
 }
-.icono-sesion:hover > .menu-vertical {
-  display: block;
-}
 .img-menu-conf {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
 }
 /*-------- FIN MENU SESION --------*/
 

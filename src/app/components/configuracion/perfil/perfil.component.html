@@ -1,0 +1,85 @@
+<div class="contenedor bg-custom-soft d-flex flex-column">
+  <div class="head bg-custom-medium d-flex justify-content-center py-3 mb-4">
+    <p class="fs-5">Mi Perfil - Administrador</p>
+  </div>
+
+  <div>
+    <div class="d-flex justify-content-between mb-3">
+      <p><b>Admin 0001</b></p>
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contraModal">
+        Cambiar contraseña
+      </button>
+    </div>
+    <div class="row">
+      <div class="mb-1 col-12 col-md-6">
+        <label for="i-nom" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="i-nom" [attr.disabled]="opcion==0?true:null">
+      </div>
+      <div class="mb-1 col-12 col-md-6">
+        <label for="i-ape" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="i-ape" [attr.disabled]="opcion==0?true:null">
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-1 col-12 col-md-6">
+        <label for="i-nit" class="form-label">NIT <em class="text-secondary">(no editable)</em></label>
+        <input type="text" class="form-control" id="i-nit" [attr.disabled]="opcion==0?true:null" readonly="true">
+      </div>
+      <div class="mb-1 col-12 col-md-6">
+        <label for="i-nrc" class="form-label">NRC <em class="text-secondary">(no editable)</em></label>
+        <input type="text" class="form-control" id="i-nrc" [attr.disabled]="opcion==0?true:null" readonly="true">
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-1 col-12 col-md-6">
+        <label for="i-mai" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="i-mai" [attr.disabled]="opcion==0?true:null">
+      </div>
+      <div class="mb-1 col-12 col-md-6">
+        <label for="i-tel" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="i-tel" [attr.disabled]="opcion==0?true:null">
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-12">
+        <label for="i-dir" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="i-dir" [attr.disabled]="opcion==0?true:null">
+      </div>
+      <div class="mb-1 col-12">
+        <label for="formFile" class="form-label">Credencial</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+      <button class="btn" (click)="operacion()" [ngClass]="opcion == 0?'btn-warning':'btn-danger'">
+        {{ opciones[opcion] }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="contraModal" tabindex="-1" aria-labelledby="contraModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="contraModalLabel">Cambio de contraseña</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-1 col-12">
+            <label for="i-c1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="i-nom">
+          </div>
+          <div class="mb-1 col-12">
+            <label for="i-c2" class="form-label">Repita la contraseña</label>
+            <input type="password" class="form-control" id="i-ape">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button"  class="btn btn-primary" (click)="cambioContra()" data-bs-dismiss="modal">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

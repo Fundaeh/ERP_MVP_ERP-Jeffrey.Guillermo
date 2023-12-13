@@ -12,5 +12,9 @@ export const distribucion_rutas: Routes = [
   {
     path: 'rrhh',
     loadChildren: () => import("../../components/contabilidadhome/contabilidad.module").then(m => m.ContabilidadModule)
+  },
+  {
+    path: 'configuracion',
+    loadChildren: () => import("../../components/configuracion/configuracion.module").then(m => m.ConfiguracionModule)
   }
 ]

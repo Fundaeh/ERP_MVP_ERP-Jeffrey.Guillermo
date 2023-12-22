@@ -19,17 +19,13 @@ export class MenuLateralComponent implements OnInit {
   ngOnInit() {
     this.opcionMenuService.changeString.subscribe((opcion)=>{
       this.menus = this.menu(this.opcionMenuService.getDatos());
+      this.router.navigate([this.menus[1].ruta])
+      this.tituloS = this.menus[1].titulo;
     });
     
     /* Después de iniciar sesión se cargará esta opción por defecto */
-    this.menus = this.menu("configuracion"); // contabilidad
+    this.menus = this.menu("contabilidad");
     this.service.toggleMenuOption(2);
-
-    /* Work In Progress: Arreglar para que funcione cada vez que se mueve uno en el menu SU */
-    this.tituloS = this.menus[1].titulo;
-    this.router.navigate([this.menus[1].ruta])
-    console.log("PRIMER INICIO: " + this.menus[1].titulo)
-
   }
 
   menu(valor:string){
@@ -43,7 +39,7 @@ export class MenuLateralComponent implements OnInit {
       ],
       "contabilidad":[
         {titulo: "Contabilidad", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
-        {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/configuracion/perfil"},//"/contabilidad/contabilidadinicio"},
+        {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/contabilidadinicio"},
         /*{titulo: "Registro clientes", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},*/
         /*{titulo: "Registro proveedores", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},*/
         {titulo: "Factura de credito fiscal", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/documentodte/creditofiscal"},
@@ -64,7 +60,8 @@ export class MenuLateralComponent implements OnInit {
         {titulo: "Registro F. Sujeto Excluido", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""}*/
       ],
       "rrhh":[
-        {titulo: "RRHH", logo: "../../../assets/iconos/Logo-Contabilidad.png"}
+        {titulo: "RRHH", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
+        {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/rrhh/inicio"},
       ]
     }
     return menu[valor as keyof typeof menu];

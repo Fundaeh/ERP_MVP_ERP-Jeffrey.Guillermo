@@ -1,6 +1,4 @@
 <div class="menu-inicio container" [ngClass]="service.isOpenMenuSuperior == true ? '' : 'menu-inicio-hide'">
-  <!--  -->
-  <!-- cambiar a true displayNo-->
   <div (click)="toggleMenuOption(1); opcionMenu('finanzas')" class="btn-main bg-custom-soft"  [ngClass]="service.isMenuSelected(1) ? 'btn-activo':''">
     <img class="head-img" src="/assets/iconos/Logo-Finanzas.png" alt="finanzas" />
     <p>FINANZAS</p>

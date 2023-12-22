@@ -23,13 +23,13 @@
           </li>
         </ul>
       </div>
-      <p class="contador">0001</p>
+      <p class="contador">(Admin)</p>
       <div class="contenedor-sesion">
         <img class="icono-menu invert-img-color" src="../assets/iconos/navUser.svg" alt="Usuario">
         <div class="menu-vertical bg-custom-soft">
           <div class="menu-vertical-head">
             <h3>Sergio Nortero</h3>
-            <p>Estudiante 001</p>
+            <p>Admin|Contador 0001</p>
           </div>
           <div class="menu-config">
             <div class="config-option" (click)="opcionMenu('contabilidad'); dataService.toggleMenuOption(2);">
@@ -50,6 +50,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div title="Usuario activo">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" fill="green" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg>
       </div>
       <!--
       <div class="contenedor-sesion">
@@ -99,13 +102,14 @@
     <div class="nav-sec-contenido">
       <div class="buscador bg-custom-medium">
         <button routerLink="/resultados/resultados" class="buscador-boton bg-custom-medium" >
-          <!-- (click)="mandarDato()" -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-          viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
         </button>
-        <input class="bg-custom-medium" type="text" [(ngModel)]="valor" placeholder="Buscar en este ERP Contable">
+        <input 
+          class="bg-custom-medium" type="text" 
+          [(ngModel)]="valorBusqueda"
+          (ngModelChange)="buscar()"
+          placeholder="Buscar en este ERP Contable" />
       </div>
     </div>
     <div class="menu-inicio" (click)="desplegarMenuSuperior()">
@@ -116,7 +120,25 @@
     </div>
   </div>
 
-  
+  <div class="position-absolute top-100 start-50 translate-middle-x card col-8 m-4 shadow-lg bg-custom-soft" *ngIf="this.dataService.buscando">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div></div>
+        <h6>Resultados:</h6>
+        <button type="button" class="btn-close" (click)="resetBusqueda()" aria-label="Close"></button>
+      </div>
+      <div class="list-group">
+        <div 
+          *ngFor="let doc of encontrados"
+          class="list-group-item list-group-item-action pointer"
+          (click)="seleccionarBusqueda(doc.nombreDoc)"
+        > 
+          {{ doc.nombreDoc }}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </nav>
 
 <!-- Modal -->

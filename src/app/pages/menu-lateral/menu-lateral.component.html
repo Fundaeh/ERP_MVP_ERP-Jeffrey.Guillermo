@@ -11,14 +11,14 @@
     <div class="aside-options">
       <ng-container *ngFor="let menu of menus"> 
         <ng-container *ngIf="menu.titulo.toUpperCase() != menus[0].titulo.toUpperCase()">
-          <a [routerLink]="menu.ruta" type="button" class="btn btn-sm" data-bs-toggle="tooltip" data-bs-placement="right"
+          <a [routerLink]="menu.ruta" type="button" class="btn btn-sm"
           [ngClass]="[menu.titulo == tituloS ? 'btn-opt' : '']">
 
             <div
               class="bg-custom-soft"
               (click)="tituloS = menu.titulo"
               [ngClass]="[service.isOpen != true ? 'aside-opt' : 'closed-aside-opt']"
-              bTooltip title="{{menu.titulo}}"
+              title="{{menu.titulo}}"
             >
               <img [src]="menu.logo" alt="{{menu.titulo}}" />
               <h3>{{ menu.titulo }}</h3>

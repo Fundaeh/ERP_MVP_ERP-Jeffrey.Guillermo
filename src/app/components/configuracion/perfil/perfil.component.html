@@ -11,45 +11,78 @@
       </button>
     </div>
     <div class="row">
-      <div class="mb-1 col-12 col-md-6">
-        <label for="i-nom" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="i-nom" [attr.disabled]="opcion==0?true:null">
+      <div class="form-group required mb-1 col-12 col-md-6">
+        <label for="i_nom" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="i_nom" required [attr.disabled]="opcion==0?true:null">
       </div>
-      <div class="mb-1 col-12 col-md-6">
-        <label for="i-ape" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="i-ape" [attr.disabled]="opcion==0?true:null">
-      </div>
-    </div>
-    <div class="row">
-      <div class="mb-1 col-12 col-md-6">
-        <label for="i-nit" class="form-label">NIT <em class="text-secondary">(no editable)</em></label>
-        <input type="text" class="form-control" id="i-nit" [attr.disabled]="opcion==0?true:null" readonly="true">
-      </div>
-      <div class="mb-1 col-12 col-md-6">
-        <label for="i-nrc" class="form-label">NRC <em class="text-secondary">(no editable)</em></label>
-        <input type="text" class="form-control" id="i-nrc" [attr.disabled]="opcion==0?true:null" readonly="true">
+      <div class="form-group required mb-1 col-12 col-md-6">
+        <label for="i_ape" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="i_ape" required [attr.disabled]="opcion==0?true:null">
       </div>
     </div>
     <div class="row">
-      <div class="mb-1 col-12 col-md-6">
-        <label for="i-mai" class="form-label">Correo</label>
-        <input type="email" class="form-control" id="i-mai" [attr.disabled]="opcion==0?true:null">
+      <div class="form-group required mb-1 col-12 col-md-6">
+        <label for="i_nit" class="form-label">NIT <em class="text-secondary">(no editable)</em></label>
+        <input type="text" class="form-control" id="i_nit" required disabled="true" readonly="true">
       </div>
-      <div class="mb-1 col-12 col-md-6">
-        <label for="i-tel" class="form-label">Teléfono</label>
-        <input type="text" class="form-control" id="i-tel" [attr.disabled]="opcion==0?true:null">
+      <div class="form-group required mb-1 col-12 col-md-6">
+        <label for="i_dui" class="form-label">DUI <em class="text-secondary">(no editable)</em></label>
+        <input type="text" class="form-control" id="i_dui" required disabled="true" readonly="true">
+      </div>
+      <div class="form-group required mb-1 col-12 col-md-6">
+        <label for="i_nrc" class="form-label">NRC <em class="text-secondary">(no editable)</em></label>
+        <input type="text" class="form-control" id="i_nrc" required disabled="true" readonly="true">
       </div>
     </div>
     <div class="row">
-      <div class="mb-3 col-12">
-        <label for="i-dir" class="form-label">Dirección</label>
-        <input type="text" class="form-control" id="i-dir" [attr.disabled]="opcion==0?true:null">
+      <div class="form-group required mb-1 col-12 col-md-6">
+        <label for="i_mai" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="i_mai" required [attr.disabled]="opcion==0?true:null">
       </div>
-      <div class="mb-1 col-12">
-        <label for="formFile" class="form-label">Credencial</label>
-        <input class="form-control" type="file" id="formFile">
+      <div class="form-group required mb-1 col-12 col-md-6">
+        <label for="i_tel" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="i_tel" required [attr.disabled]="opcion==0?true:null">
       </div>
     </div>
+    <div class="row">
+      <div class="form-group required mb-3 col-12">
+        <label for="i_dir" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="i_dir" required [attr.disabled]="opcion==0?true:null">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group mb-1 col-4">
+        <label for="i_file" class="form-label">Credencial CVCP (pdf, jpg, jpeg, png)</label>
+        <input class="form-control" type="file" id="i_file" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
+      </div>
+      <div class="form-group mb-1 col-4">
+        <label for="i_file" class="form-label">Período desde</label>
+        <app-custom-datepicker 
+          [displayMonths]="1"
+          [navigation]="'select'"
+          [outsideDays]="'visible'"
+          [disabled]="opcion==0?true:null"
+        />
+      </div>
+      <div class="form-group mb-1 col-4">
+        <label for="i_file" class="form-label">Hasta</label>
+        <app-custom-datepicker 
+        [displayMonths]="1"
+        [navigation]="'select'"
+        [outsideDays]="'visible'"
+        [disabled]="opcion==0?true:null"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group mb-1 col-12 col-md-6">
+        <label for="i_file2" class="form-label">Antedecentes Penales</label>
+        <input type="file" class="form-control" id="i_file2" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
+      </div>
+      <div class="form-group mb-1 col-12 col-md-6">
+        <label for="i_file3" class="form-label">Solvencial Policia</label>
+        <input type="file" class="form-control"  id="i_file3" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
+      </div>
     <div class="d-flex justify-content-end mt-3">
       <button class="btn" (click)="operacion()" [ngClass]="opcion == 0?'btn-warning':'btn-danger'">
         {{ opciones[opcion] }}
@@ -67,12 +100,18 @@
         </div>
         <div class="modal-body">
           <div class="mb-1 col-12">
-            <label for="i-c1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="i-nom">
+            <label for="i_c1" class="form-label">Contraseña</label>
+            <div class="input-group">
+              <input type="{{ mostrarP1 ? 'text' : 'password' }}" class="form-control border-end-0" id="i_c1">
+              <a (click)="mostrarP1 = !mostrarP1" class="input-group-text bg-transparent"><i class="bx {{mostrarP1 == false ? 'bx-hide': 'bxs-show'}}"></i></a>
+            </div>
           </div>
           <div class="mb-1 col-12">
-            <label for="i-c2" class="form-label">Repita la contraseña</label>
-            <input type="password" class="form-control" id="i-ape">
+            <label for="i_c2" class="form-label">Repita la contraseña</label>
+            <div class="input-group">
+              <input type="{{ mostrarP2 ? 'text' : 'password' }}" class="form-control border-end-0" id="i_c2">
+              <a (click)="mostrarP2 = !mostrarP2" class="input-group-text bg-transparent"><i class="bx {{mostrarP2 == false ? 'bx-hide': 'bxs-show'}}"></i></a>
+            </div>
           </div>
         </div>
         <div class="modal-footer">

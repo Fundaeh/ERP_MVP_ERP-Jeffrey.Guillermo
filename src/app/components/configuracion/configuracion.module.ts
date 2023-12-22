@@ -8,6 +8,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios.component';
 import { RegistroContabilidadesComponent } from './registro-contabilidades/registro-contabilidades.component';
 import { HistorialCambiosComponent } from './historial-cambios/historial-cambios.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomDatepickerComponent } from '../_base-components/input-datepicker/custom-datepicker.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,12 @@ import { HistorialCambiosComponent } from './historial-cambios/historial-cambios
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ConfiguracionRoutingModule,
     MatTableModule,
-    RouterModule
+    RouterModule,
+    NgbModule,
+    CustomDatepickerComponent
   ]
 })
 export class ConfiguracionModule { }

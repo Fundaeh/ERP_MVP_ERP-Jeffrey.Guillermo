@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Historial, HistorialData } from 'src/app/pages/interfaces/historial';
 
 @Component({
   selector: 'app-historial-cambios',
@@ -8,35 +7,46 @@ import { Historial, HistorialData } from 'src/app/pages/interfaces/historial';
 })
 export class HistorialCambiosComponent implements OnInit {
 
-  historialLista = ['ejemplo1', 'ejemplo2'];
-
-  historialSeleccionado: HistorialData | undefined;
-
-  ejemploHistorial1: HistorialData = {
-    columnas: ['columna1', 'columna2'],
-    historial: [
-      {'columna1': 'valor_c1_r1', 'columna2': 'valor_c2_r1'},
-      {'columna1': 'valor_c1_r2', 'columna2': 'valor_c2_r2'},
-    ]
-  }
-  ejemploHistorial2: HistorialData = {
-    columnas: ['col uno', 'col dos', 'col tres'],
-    historial: [
-      {'col1': 1, 'columna2': '2', 'col3': 3},
-      {'col1': 2, 'col2': 4, 'col tres': 7},
-      {'col1': 3, 'col2': 7, 'col tres': 14},
-    ]
-  }
+  historialLista: any[] = [];
+  historialSeleccionado: string = "";
+  historial: any[] = [];
 
   constructor() { }
 
   ngOnInit() {
-    this.historialSeleccionado = this.ejemploHistorial1;
-    console.log(JSON.stringify(this.historialSeleccionado))
+    // Esta lista la deba mandar Backend para llenar el dropdown de opciones a cargar en la tabla
+    this.historialLista = ['tabla1', 'tabla2'];
   }
 
-  buscarHistorial(tabla:string) {
+  setHistorialSeleccionado(seleccion:string) {
+    this.historialSeleccionado = seleccion;
+  }
+
+  buscarHistorial() {
     // Lógica para buscar el historial solicitado
+    
+    // Este if solo sirve como razón de prueba y simulación de data
+    if (this.historialSeleccionado == 'tabla1') {
+      this.historial = [
+        {columna1: 'cambio1', columna2: 'valor1', usuario: 'Pedro Hernandez', fecha: '1/12/2023 21:50'},
+        {columna1: 'cambio2', columna2: 'valor2', usuario: 'José Gómez', fecha: '9/12/2023 21:50'},
+      ];
+    } else {
+      this.historial = [
+        {'col1': 1, 'usuario': 'Pedro Hernandez', 'fecha': '7/11/2023', 'hora': '09:57 AM'},
+        {'col1': 2, 'usuario': 'Diana Mendoza', 'fecha': '12/12/2023', 'hora': '04:35 PM'},
+        {'col1': 3, 'usuario': 'Pedro Hernandez', 'fecha': '15/12/2023', 'hora': '03:46 PM'},
+      ];
+    }
   }
 
+  getArrayKeysFromObject(obj: any) {
+    if (obj == null) {
+      return [];
+    }
+    return Object.keys(obj);
+  }
+  getArrayValuesFromObject(obj: any) {
+    return Object.values(obj);
+  }
 }

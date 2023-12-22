@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-
   opcion = 0;
   opciones = ["Editar","Guardar"];
+
+  navigation = 'select';
+  public mostrarP1: boolean = false;
+  public mostrarP2: boolean = false;
 
   constructor() { }
 

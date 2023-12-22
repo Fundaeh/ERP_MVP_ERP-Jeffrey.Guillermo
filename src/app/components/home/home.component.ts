@@ -12,6 +12,9 @@ export class HomeComponent {
   constructor(public service:DataService) {
   }
 
+  buscando() {
+    return this.service.buscando;
+  }
   cerrarMenus() {
     this.service.closeMenus();
   }

@@ -1,41 +1,47 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Archivo } from '../pages/interfaces/archivo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-
   //URL de la base
-  _url = 'http://localhost:3010/prueba';
+  _url = 'http://localhost:3010/buscador';
   pdfName: string = '';
+  buscando: boolean = false;
 
   //Variable que almacenara el valor a pasar
-  nombreUsuario: string = 'Debe escribir un nombre a buscar';
   arregloFiltrado: Array<any> = [];
-  desplegar:boolean = false;
+  busquedaSeleccionado: string = "";
 
   /* Variables para tema del sitio */
   escalaGrises = false;
   tema = 'light';
 
   constructor( private http: HttpClient ) {
-    console.log("Servicio Funcionando");
-   }
+    //console.log("Servicio Funcionando");
+  }
 
-   getDatos() {
+  getDatos() {
     let heades = new HttpHeaders()
       .set('Type-content', 'aplication/json')
 
     return this.http.get(this._url, {headers: heades});
   }
-
-  //Opcion un no definida
-  buscarDatos(nombre: string) {
-    const params = new HttpParams()
-      .set('nombre', nombre);
-
-    return this.http.get(`${this._url}?p=`, { params });
+  
+  buscarDatos(archivo: string)  {
+    let promise = new Promise<void>((resolve, reject) => {
+      const params = new HttpParams().set('archivo', archivo);
+  
+      this.http.get<Archivo[]>(this._url, { params }).subscribe({
+        next: (res) => {
+          this.arregloFiltrado = res
+          resolve()
+        }
+      });
+    });
+    return promise;
   }
 
   isOpen: boolean = false;

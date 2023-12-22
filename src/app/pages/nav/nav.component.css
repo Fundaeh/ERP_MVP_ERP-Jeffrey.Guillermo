@@ -208,3 +208,7 @@ span {
 .dropdown-menu hr {
   margin: 5px 0!important;
 }
+
+.pointer {
+  cursor: pointer;
+}

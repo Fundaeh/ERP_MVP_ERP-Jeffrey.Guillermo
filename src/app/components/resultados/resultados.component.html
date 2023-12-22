@@ -1,9 +1,9 @@
 <div class="contenedor">
     <!-- <p>resultados works!</p> -->
 
-    <h1 class="tituloBuscar">{{conectarServicio.nombreUsuario}}</h1>
+    <h1 class="tituloBuscar">{{conectarServicio.busquedaSeleccionado}}</h1>
     <ul>
-        <li class="listas" *ngFor="let dato of datos1 | filter: conectarServicio.nombreUsuario">
+        <li class="listas" *ngFor="let dato of datos1 | filter: conectarServicio.busquedaSeleccionado">
             <p>{{dato.id}}- </p>
             <a (click)="irPDFView(dato.nombreDoc)">{{ dato.nombreDoc }}</a>
         </li>

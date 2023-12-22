@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { MenuOpcionService } from 'src/app/services/menuOpcion/menu-opcion.service';
+import { Archivo } from '../interfaces/archivo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +12,8 @@ import { MenuOpcionService } from 'src/app/services/menuOpcion/menu-opcion.servi
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  valor:any = '';
+  valorBusqueda: string = '';
+  encontrados: Archivo[] = [];
 
   abrirHam = false;
   cerrar = true;
@@ -21,7 +24,7 @@ export class NavComponent {
   filteredOptions: Observable<string[]> | undefined;
   menuInicioShow: boolean = false;
 
-  constructor(public dataService:DataService, public opcionMenuService:MenuOpcionService) {
+  constructor(private router: Router, public dataService:DataService, public opcionMenuService:MenuOpcionService) {
   }
 
   ngOnInit() {
@@ -39,19 +42,32 @@ export class NavComponent {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-  mandarDato() {
-    this.dataService.nombreUsuario = this.valor;
-    console.log(this.valor);
+  async buscar() {
+    // Seteamos bandera de búsqueda para cambios visuales
+    this.dataService.buscando = this.valorBusqueda != "";
+    
+    // Llamamos al método que busca al servidor
+    if (this.dataService.buscando) {
+      await this.dataService.buscarDatos(this.valorBusqueda);
+      this.encontrados = this.dataService.arregloFiltrado;
+    }
+  }
+  seleccionarBusqueda(seleccionado: string) {
+    this.dataService.busquedaSeleccionado = seleccionado;
+    this.router.navigate(["/resultados"]);
+  }
+
+  resetBusqueda() {
+    this.valorBusqueda = "";
+    this.dataService.buscando = false;
   }
 
   desplegarMenuHam() {
     this.dataService.toggle();
   }
-
   desplegarMenuSuperior() {
     this.dataService.toggleMenuSuperior();
-  }
-  
+  }  
   opcionMenu(opcion:string) {
     this.opcionMenuService.setDatos(opcion);
   }

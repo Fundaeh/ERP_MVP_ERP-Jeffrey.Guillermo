@@ -19,6 +19,6 @@ export class MenuSuperiorComponent implements OnInit {
   }
 
   opcionMenu(opcion:string = "contabilidad") {
-    this.opcionMenuService.setDatos(opcion);
+    this.opcionMenuService.setDatos(opcion);    
   }
 }

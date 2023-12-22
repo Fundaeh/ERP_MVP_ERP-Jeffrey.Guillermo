@@ -30,13 +30,12 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/assets/css/custom.min.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -70,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MVP-v3_0:build:production"
+              "buildTarget": "MVP-v3_0:build:production"
             },
             "development": {
-              "browserTarget": "MVP-v3_0:build:development"
+              "buildTarget": "MVP-v3_0:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MVP-v3_0:build"
+            "buildTarget": "MVP-v3_0:build"
           }
         },
         "test": {

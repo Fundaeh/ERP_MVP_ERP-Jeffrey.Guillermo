@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
 })
 export class MenuOpcionService {
 
-  @Output() change: EventEmitter<boolean> = new EventEmitter();
-   changeString: EventEmitter<string> = new EventEmitter();
+  change: EventEmitter<boolean> = new EventEmitter();
+  changeString: EventEmitter<string> = new EventEmitter();
 
-  private opcionMenu: string = ""
+  private opcionMenu: string = "";
   constructor() { }
 
   setDatos(datos: string) {

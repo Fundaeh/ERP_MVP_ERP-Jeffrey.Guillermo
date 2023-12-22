@@ -35,9 +35,4 @@ export class AppComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-  mandarDato() {
-    this.dataService.nombreUsuario = this.valor;
-    console.log(this.valor);
-  }
-
 }

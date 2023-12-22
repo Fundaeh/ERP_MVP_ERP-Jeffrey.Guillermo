@@ -26,7 +26,7 @@
           <tr>
             <td>Empresa 1</td>
             <td>Empresa Uno SA de CV</td>
-            <td>empresa1@gmail.com</td>
+            <td>empresa1&#64;gmail.com</td>
             <td>USD</td>
             <td>3</td>
             <td>defecto</td>
@@ -39,7 +39,7 @@
           <tr>
             <td>Empresa 2</td>
             <td>Empresa Dos SA de CV</td>
-            <td>empresa2@gmail.com</td>
+            <td>empresa2&#64;gmail.com</td>
             <td>GTQ</td>
             <td>2</td>
             <td>exceso</td>
@@ -52,7 +52,7 @@
           <tr>
             <td>Empresa 3</td>
             <td>Empresa Tres SA de CV</td>
-            <td>empresa3@gmail.com</td>
+            <td>empresa3&#64;gmail.com</td>
             <td>USD</td>
             <td>2</td>
             <td>defecto</td>
@@ -68,43 +68,43 @@
 
     <div *ngIf="opcion == 1">
       <div class="row">
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group required mb-1 col-12 col-md-6">
           <label for="i-nom" class="form-label">Nombre o razón social</label>
           <input type="text" class="form-control" id="i-nom">
         </div>
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group mb-1 col-12 col-md-6">
           <label for="i-nomc" class="form-label">Nombre comercial</label>
           <input type="text" class="form-control" id="i-nomc">
         </div>
       </div>
       <div class="row">
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group required mb-1 col-12 col-md-6">
           <label for="i-mai" class="form-label">Correo (para factura electrónica)</label>
           <input type="email" class="form-control" id="i-mai">
         </div>
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group required mb-1 col-12 col-md-6">
           <label for="i-tel" class="form-label">Teléfono</label>
           <input type="text" class="form-control" id="i-tel">
         </div>
       </div>
       <div class="row">
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group required mb-1 col-12 col-md-6">
           <label for="i-nit" class="form-label">NIT</label>
           <input type="text" class="form-control" id="i-nit">
         </div>
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group required mb-1 col-12 col-md-6">
           <label for="i-nrc" class="form-label">NRC</label>
           <input type="text" class="form-control" id="i-nrc">
         </div>
       </div>
       <div class="row">
-        <div class="mb-1 col-12">
+        <div class="form-group required mb-1 col-12">
           <label for="i-dir" class="form-label">Dirección</label>
           <input type="text" class="form-control" id="i-dir">
         </div>
       </div>
       <div class="row">
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group required mb-1 col-12 col-md-6">
           <label for="i-est" class="form-label">Tipo establecimiento</label>
           <select class="form-select" id="i-est">
             <option value="1">Tipo 1</option>
@@ -112,7 +112,7 @@
             <option value="3">Tipo 3</option>
           </select>
         </div>
-        <div class="mb-1 col-12 col-md-6">
+        <div class="form-group required mb-1 col-12 col-md-6">
           <label for="i-act" class="form-label">Actividad económica</label>
           <select class="form-select" id="i-act">
             <option value="1">Act 1</option>
@@ -122,7 +122,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="mb-1 col-12 col-md-4">
+        <div class="form-group required mb-1 col-12 col-md-4">
           <label for="i-tdm" class="form-label">Tipo de moneda</label>
           <select class="form-select" id="i-tdm">
             <option value="1">USD</option>
@@ -130,11 +130,11 @@
             <option value="3">SVC</option>
           </select>
         </div>
-        <div class="mb-1 col-12 col-md-4">
+        <div class="form-group required mb-1 col-12 col-md-4">
           <label for="i-cfs" class="form-label">Cifras significativas</label>
           <input type="number" class="form-control" id="i-cfs">
         </div>
-        <div class="mb-1 col-12 col-md-4">
+        <div class="form-group required mb-1 col-12 col-md-4">
           <label for="i-aprx" class="form-label">Tipo de aproximación</label>
           <select class="form-select" id="i-aprx">
             <option value="1">Por defecto (1.414 = 1.41)</option>

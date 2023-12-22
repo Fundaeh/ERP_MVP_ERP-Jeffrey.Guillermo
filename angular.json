@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MVP-v3_0:build:production"
+              "buildTarget": "MVP-v3_0:build:production"
             },
             "development": {
-              "browserTarget": "MVP-v3_0:build:development"
+              "buildTarget": "MVP-v3_0:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MVP-v3_0:build"
+            "buildTarget": "MVP-v3_0:build"
           }
         },
         "test": {

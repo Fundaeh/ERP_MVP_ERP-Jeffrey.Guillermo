@@ -39,7 +39,7 @@ export class MenuLateralComponent implements OnInit {
       ],
       "contabilidad":[
         {titulo: "Contabilidad", logo: "../../../assets/iconos/Logo-Contabilidad.png"},
-        {titulo: "Inicio", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/contabilidadinicio"},
+        {titulo: "Registros", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/registros"},
         /*{titulo: "Registro clientes", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},*/
         /*{titulo: "Registro proveedores", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: ""},*/
         {titulo: "Factura de credito fiscal", logo: "../../../assets/iconos/Logo-Contabilidad.png",ruta: "/contabilidad/documentodte/creditofiscal"},

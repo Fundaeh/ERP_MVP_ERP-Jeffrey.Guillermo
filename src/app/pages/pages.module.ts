@@ -9,6 +9,7 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { MenuSuperiorComponent } from './menu-superior/menu-superior.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { PdfViewComponent } from '../components/pdf-view/pdf-view.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     RouterModule,
+    PdfViewComponent
   ],
   exports: [
     NavComponent,

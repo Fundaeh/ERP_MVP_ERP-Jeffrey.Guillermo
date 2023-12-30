@@ -28,8 +28,8 @@ export class HistorialCambiosComponent implements OnInit {
     // Este if solo sirve como razón de prueba y simulación de data
     if (this.historialSeleccionado == 'tabla1') {
       this.historial = [
-        {columna1: 'cambio1', columna2: 'valor1', usuario: 'Pedro Hernandez', fecha: '1/12/2023 21:50'},
-        {columna1: 'cambio2', columna2: 'valor2', usuario: 'José Gómez', fecha: '9/12/2023 21:50'},
+        {columna1: 'cambio1', columna2: 'valor1', usuario: 'Pedro Hernandez', fecha: '1/12/2023', hora: '09:50 PM'},
+        {columna1: 'cambio2', columna2: 'valor2', usuario: 'José Gómez', fecha: '9/12/2023', hora: '09:50 PM'},
       ];
     } else {
       this.historial = [

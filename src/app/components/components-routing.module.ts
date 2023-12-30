@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      {path: 'resultados', component: ResultadosComponent},
+      //{path: 'resultados', component: ResultadosComponent},
       {path: 'pdfView', component: PdfViewComponent},
       {path: 'finanzas', component: FinanzasComponent},
       {path: 'rrhh', component: RrhhComponent},

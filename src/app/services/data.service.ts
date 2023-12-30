@@ -6,9 +6,8 @@ import { Archivo } from '../pages/interfaces/archivo';
   providedIn: 'root'
 })
 export class DataService {
-  //URL de la base
+  //URL base del buscador node corriendo local
   _url = 'http://localhost:3010/buscador';
-  pdfName: string = '';
   buscando: boolean = false;
 
   //Variable que almacenara el valor a pasar

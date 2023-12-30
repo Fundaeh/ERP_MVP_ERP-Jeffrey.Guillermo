@@ -12,9 +12,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
+  // Variables del buscador
   valorBusqueda: string = '';
   encontrados: Archivo[] = [];
+  seleccionado: string = '';
 
+  // Variables de navegación
   abrirHam = false;
   cerrar = true;
   menu = false;
@@ -45,21 +48,34 @@ export class NavComponent {
   async buscar() {
     // Seteamos bandera de búsqueda para cambios visuales
     this.dataService.buscando = this.valorBusqueda != "";
-    
+    // Y reseteamos la opción seleccionada
+    this.seleccionado = "";
+
     // Llamamos al método que busca al servidor
     if (this.dataService.buscando) {
       await this.dataService.buscarDatos(this.valorBusqueda);
       this.encontrados = this.dataService.arregloFiltrado;
     }
   }
+  
   seleccionarBusqueda(seleccionado: string) {
     this.dataService.busquedaSeleccionado = seleccionado;
-    this.router.navigate(["/resultados"]);
+    this.seleccionado = seleccionado;
+    let actual: any = this.encontrados.find(e => e.nombreDoc = this.seleccionado);
+    this.encontrados = [actual];
   }
 
   resetBusqueda() {
-    this.valorBusqueda = "";
-    this.dataService.buscando = false;
+    if (this.seleccionado != "") {
+      // Si hay algo escrito en la barra de búsqueda solo se oculta el pdf-view
+      this.seleccionado = "";
+      this.buscar()
+    } else {
+      // Limpiamos toda la búsqueda y se cierra el paen de vista previa
+      this.valorBusqueda = "";
+      this.dataService.buscando = false;
+      this.seleccionado = "";
+    }
   }
 
   desplegarMenuHam() {

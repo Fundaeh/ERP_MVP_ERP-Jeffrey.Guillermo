@@ -5,10 +5,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { ComponentsRoutingModule } from './components-routing.module';
 
-import { ResultadosComponent } from './resultados/resultados.component';
 import { FilterPipe } from 'src/app/pipes/filter.pipe';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-import { PdfViewComponent } from './pdf-view/pdf-view.component';
 import { CatalogUserComponent } from './catalog-user/catalog-user.component';
 import { RegistroClientesComponent } from './registro-clientes/registro-clientes.component';
 import { EjemploComponent } from './ejemplo/ejemplo.component';
@@ -18,9 +16,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    ResultadosComponent,
+    //ResultadosComponent,
     FilterPipe,
-    PdfViewComponent,
+    //PdfViewComponent,
     CatalogUserComponent,
     RegistroClientesComponent,
     EjemploComponent,
@@ -31,9 +29,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ComponentsRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    NgxExtendedPdfViewerModule,
-    CustomDatepickerComponent,
-    NgbModule
+    //NgxExtendedPdfViewerModule,
+    NgbModule,
+    CustomDatepickerComponent
   ],
   exports: [
   ],

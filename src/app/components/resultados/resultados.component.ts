@@ -39,7 +39,7 @@ export class ResultadosComponent implements OnInit {
   }
 
   irPDFView(nameDoc: string) {
-    this.conectarServicio.pdfName = nameDoc;
+    //this.conectarServicio.pdfName = nameDoc;
     this.router.navigate(['/resultados/pdfView']);
   }
 

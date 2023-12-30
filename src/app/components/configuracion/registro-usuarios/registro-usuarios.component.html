@@ -1,147 +1,217 @@
 <div class="contenedor bg-custom-soft d-flex flex-column">
   <div class="head bg-custom-medium d-flex justify-content-center py-3 mb-4">
-    <p class="fs-5">Registro de usuarios (contador)</p>
+    <p class="fs-5">Registro de usuarios contadores</p>
   </div>
 
   <div>
-    <div class="d-flex justify-content-end mb-3">
-      <button class="btn btn-warning" (click)="operacion()">
-        {{opcion == 0 ? 'Nuevo' : 'Atras'}}
+    <div class="d-flex justify-content-between mb-3">
+      <h3>
+        {{
+          opcion == 2 ? 'Creando usuario' : 
+          opcion == 3 ? 'Editando usuario' :
+          opcion == 4 ? 'Detalle usuario' : 'Listado de usuarios'
+        }}
+      </h3>
+    </div>
+    <div class="p-2 row shadow-2 card" *ngIf="opcion == 1">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover text-center">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">DUI</th>
+              <th scope="col">Telefono</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of lista">
+              <td>{{usuario.nombre}}</td>
+              <td>{{usuario.apellido}}</td>
+              <td>{{usuario.dui}}-0</td>
+              <td>{{usuario.telefono}}</td>
+              <td>
+                <button class="btn" (click)="operacion(usuario.id, 4)"><i class='bx bx-show'></i></button>
+                <button class="btn" (click)="operacion(usuario.id, 3)"><i class='bx bxs-pencil'></i></button>
+                <button class="btn" (click)="seleccionar(usuario.id)" data-bs-toggle="modal" data-bs-target="#contraModal"><i class='bx bxs-key'></i></button>
+                <button class="btn" (click)="operacion(usuario.id, 5)"><i class='bx bx-trash'></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div *ngIf="opcion != 1">
+      <div class="card mb-2 p-2 bg-custom-soft">
+        <div class="row">
+          <div class="form-group required mb-1 col-12 col-md-6">
+            <label for="i-nom" class="form-label">Nombre</label>
+            <input id="i-nom" type="text" class="form-control" required
+              value="{{ opcion != 2 ? seleccionado.nombre : ''}}" 
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-6">
+            <label for="i-ape" class="form-label">Apellido</label>
+            <input id="i-ape" type="text" class="form-control" required
+              value="{{ opcion != 2 ? seleccionado.apellido : ''}}"
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group required mb-1 col-12 col-md-6">
+            <label for="i_dui" class="form-label">DUI </label>
+            <input id="i_dui" type="text" class="form-control" required
+              value="{{ opcion != 2 ? seleccionado.dui : ''}}" 
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-6">
+            <label for="i_nit" class="form-label">NIT</label>
+            <input id="i_nit" type="text" class="form-control" required
+              value="{{ opcion != 2 ? seleccionado.nit : ''}}"
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+          <div class="form-group mb-1 col-12 col-md-6">
+            <label for="i_nrc" class="form-label">NRC</label>
+            <input id="i_nrc" type="text" class="form-control" 
+              value="{{ opcion != 2 ? seleccionado.nrc : ''}}"
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group required mb-1 col-12 col-md-6">
+            <label for="i_mai" class="form-label">Correo</label>
+            <input id="i_mai" type="email" class="form-control" required
+              value="{{ opcion != 2 ? seleccionado.correo : ''}}" 
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-6">
+            <label for="i_tel" class="form-label">Teléfono</label>
+            <input id="i_tel" type="text" class="form-control" required
+              value="{{ opcion != 2 ? seleccionado.telefono : ''}}"
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-2 p-2 bg-custom-soft">
+        <div class="row">
+          <div class="form-group required mb-1 col-12 col-md-3">
+            <label class="form-label" for="i_dir_pais">País</label>
+            <select class="form-select" id="i_dir_pais"
+              disabled="{{esEditable()}}">
+              <option selected>Seleccionar uno</option>
+            </select>
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-3">
+            <label class="form-label" for="i_dir_dep">Departamento</label>
+            <select class="form-select" id="i_dir_dep"
+              disabled="{{esEditable()}}">
+              <option selected>Seleccionar uno</option>
+            </select>
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-3">
+            <label class="form-label" for="i_dir_mun">Municipio</label>
+            <select class="form-select" id="i_dir_mun"
+              disabled="{{esEditable()}}">
+              <option selected>Seleccionar uno</option>
+            </select>
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-3">
+            <label for="i_dir" class="form-label">Complemento</label>
+            <input id="i_dir" type="text" class="form-control" required
+              value="{{ opcion != 2 ? seleccionado.complemento : ''}}" 
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+        </div>
+      </div>
+      <div class="card mb-2 p-2 bg-custom-soft">
+        <div class="row">
+          <div class="form-group required mb-1 col-12 col-md-3">
+            <label for="i_creden" class="form-label">Credencial CVCP</label>
+            <input id="i_creden" class="form-control" type="text" required
+              value="{{ opcion != 2 ? seleccionado.credencialCvcp : ''}}" 
+              readonly="{{esEditable()}}" disabled="{{esEditable()}}">
+          </div>
+          <div class="form-grou required mb-1 col-12 col-md-3">
+            <label for="i_file" class="form-label">Contrato</label>
+            <input class="form-control" type="file" id="i_file" required accept=".pdf, .jpg, .jpeg, .png"
+            disabled="{{esEditable()}}">
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-3">
+            <label for="i_file" class="form-label">Período desde</label>
+            <app-custom-datepicker 
+              [displayMonths]="1"
+              [navigation]="'select'"
+              [outsideDays]="'visible'"
+              [disabled]="esEditable()"
+            />
+          </div>
+          <div class="form-group required mb-1 col-12 col-md-3">
+            <label for="i_file" class="form-label">Hasta</label>
+            <app-custom-datepicker 
+              [displayMonths]="1"
+              [navigation]="'select'"
+              [outsideDays]="'visible'"
+              [disabled]="esEditable()"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group mb-1 col-12 col-md-6">
+            <label for="i_file2" class="form-label">Antedecentes Penales</label>
+            <input type="file" class="form-control" id="i_file2" accept=".pdf, .jpg, .jpeg, .png"
+              disabled="{{esEditable()}}">
+          </div>
+          <div class="form-group mb-1 col-12 col-md-6">
+            <label for="i_file3" class="form-label">Solvencial Policia</label>
+            <input type="file" class="form-control"  id="i_file3" accept=".pdf, .jpg, .jpeg, .png"
+              disabled="{{esEditable()}}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-3">
+      <button *ngIf="opcion != 1" class="btn btn-secondary" (click)="operacion(0, 1)"> Atras </button>
+      <button *ngIf="opcion == 1" class="btn btn-warning" (click)="operacion(0, 2)"> Nuevo </button>
+      <button *ngIf="opcion == 2 || opcion == 3" class="btn btn-danger ms-4" (click)="guardar()">
+        Guardar
       </button>
     </div>
-    <div class="p-2 row shadow-2 card" *ngIf="opcion == 0">
-      <table class="table table-responsive table-striped table-hover text-center">
-        <thead>
-          <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">NIT</th>
-            <th scope="col">NRC</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Telefono</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>0000000000000</td>
-            <td>-</td>
-            <td>mark.otto&#64;gmail.com</td>
-            <td>77889900</td>
-            <td>
-              <i class='bx bx-show p-1'></i>
-              <i class='bx bxs-pencil p-1' ></i>
-              <i class='bx bx-trash p-1'></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>0000000000000</td>
-            <td>-</td>
-            <td>jacob.thornton&#64;gmail.com</td>
-            <td>77889900</td>
-            <td>
-              <i class='bx bx-show p-1'></i>
-              <i class='bx bxs-pencil p-1' ></i>
-              <i class='bx bx-trash p-1'></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Mark</td>
-            <td>Thornton</td>
-            <td>0000000000000</td>
-            <td>-</td>
-            <td>mark.thornton&#64;gmail.com</td>
-            <td>77889900</td>
-            <td>
-              <i class='bx bx-show p-1'></i>
-              <i class='bx bxs-pencil p-1' ></i>
-              <i class='bx bx-trash p-1'></i>
-            </td>
-          </tr>
-        </tbody>
-      </table>
 
-    </div>
+  </div>
 
-    <div *ngIf="opcion == 1">
-      <div class="row">
-        <div class="form-group required mb-1 col-12 col-md-6">
-          <label for="i-nom" class="form-label">Nombre</label>
-          <input type="text" class="form-control" required id="i-nom">
+  <!-- Modal -->
+  <div class="modal fade" id="contraModal" tabindex="-1" aria-labelledby="contraModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="contraModalLabel">Cambio de contraseña</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="form-group required mb-1 col-12 col-md-6">
-          <label for="i-ape" class="form-label">Apellido</label>
-          <input type="text" class="form-control" required id="i-ape">
+        <div class="modal-body">
+          <p *ngIf="seleccionado!=null">Usuario: <b>{{seleccionado.nombre?seleccionado.nombre:''}}</b></p>
+          <div class="mb-1 col-12">
+            <label for="i_c1" class="form-label">Contraseña</label>
+            <div class="input-group">
+              <input type="{{ mostrarP1 ? 'text' : 'password' }}" class="form-control border-end-0" id="i_c1">
+              <a (click)="mostrarP1 = !mostrarP1" class="input-group-text bg-transparent"><i class="bx {{mostrarP1 == false ? 'bx-hide': 'bxs-show'}}"></i></a>
+            </div>
+          </div>
+          <div class="mb-1 col-12">
+            <label for="i_c2" class="form-label">Repita la contraseña</label>
+            <div class="input-group">
+              <input type="{{ mostrarP2 ? 'text' : 'password' }}" class="form-control border-end-0" id="i_c2">
+              <a (click)="mostrarP2 = !mostrarP2" class="input-group-text bg-transparent"><i class="bx {{mostrarP2 == false ? 'bx-hide': 'bxs-show'}}"></i></a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group required mb-1 col-12 col-md-6">
-          <label for="i-nit" class="form-label">NIT</label>
-          <input type="text" class="form-control" required id="i-nit">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button"  class="btn btn-primary" (click)="cambioContra()" data-bs-dismiss="modal">Guardar cambios</button>
         </div>
-        <div class="form-group required mb-1 col-12 col-md-6">
-          <label for="i-nrc" class="form-label">NRC</label>
-          <input type="text" class="form-control" required id="i-nrc">
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group required mb-1 col-12 col-md-6">
-          <label for="i-mai" class="form-label">Correo</label>
-          <input type="email" class="form-control" required id="i-mai">
-        </div>
-        <div class="form-group required mb-1 col-12 col-md-6">
-          <label for="i-tel" class="form-label">Teléfono</label>
-          <input type="text" class="form-control" required id="i-tel">
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group required mb-1 col-12">
-          <label for="i-dir" class="form-label">Dirección</label>
-          <input type="text" class="form-control" required id="i-dir">
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group mb-1 col-4">
-          <label for="i_file" class="form-label">Credencial CVCP (pdf, jpg, jpeg, png)</label>
-          <input class="form-control" type="file" id="i_file" accept=".pdf, .jpg, .jpeg, .png">
-        </div>
-        <div class="form-group mb-1 col-4">
-          <label for="i_file" class="form-label">Período desde</label>
-          <app-custom-datepicker 
-            [displayMonths]="1"
-            [navigation]="'select'"
-            [outsideDays]="'visible'"
-          />
-        </div>
-        <div class="form-group mb-1 col-4">
-          <label for="i_file" class="form-label">Hasta</label>
-          <app-custom-datepicker 
-          [displayMonths]="1"
-          [navigation]="'select'"
-          [outsideDays]="'visible'"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group mb-1 col-12 col-md-6">
-          <label for="i_file2" class="form-label">Antedecentes Penales</label>
-          <input type="file" class="form-control" id="i_file2" accept=".pdf, .jpg, .jpeg, .png">
-        </div>
-        <div class="form-group mb-1 col-12 col-md-6">
-          <label for="i_file3" class="form-label">Solvencial Policia</label>
-          <input type="file" class="form-control"  id="i_file3" accept=".pdf, .jpg, .jpeg, .png">
-        </div>
-      </div>
-      <div class="d-flex justify-content-end mt-3">
-        <button class="btn btn-danger" (click)="operacion()">
-          Guardar
-        </button>
       </div>
     </div>
-
   </div>
 </div>

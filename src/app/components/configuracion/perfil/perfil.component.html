@@ -10,79 +10,108 @@
         Cambiar contraseña
       </button>
     </div>
-    <div class="row">
-      <div class="form-group required mb-1 col-12 col-md-6">
-        <label for="i_nom" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="i_nom" required [attr.disabled]="opcion==0?true:null">
+    <div class="card mb-2 p-2 bg-custom-soft">
+      <div class="row">
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_nom" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="i_nom" required [attr.disabled]="opcion==0?true:null">
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_ape" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="i_ape" required [attr.disabled]="opcion==0?true:null">
+        </div>
       </div>
-      <div class="form-group required mb-1 col-12 col-md-6">
-        <label for="i_ape" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="i_ape" required [attr.disabled]="opcion==0?true:null">
+      <div class="row">
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_nit" class="form-label">NIT <em class="text-secondary">(no editable)</em></label>
+          <input type="text" class="form-control" id="i_nit" required disabled="true" readonly="true">
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_dui" class="form-label">DUI <em class="text-secondary">(no editable)</em></label>
+          <input type="text" class="form-control" id="i_dui" required disabled="true" readonly="true">
+        </div>
+        <div class="form-group mb-1 col-12 col-md-6">
+          <label for="i_nrc" class="form-label">NRC <em class="text-secondary">(no editable)</em></label>
+          <input type="text" class="form-control" id="i_nrc" disabled="true" readonly="true">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="form-group required mb-1 col-12 col-md-6">
-        <label for="i_nit" class="form-label">NIT <em class="text-secondary">(no editable)</em></label>
-        <input type="text" class="form-control" id="i_nit" required disabled="true" readonly="true">
-      </div>
-      <div class="form-group required mb-1 col-12 col-md-6">
-        <label for="i_dui" class="form-label">DUI <em class="text-secondary">(no editable)</em></label>
-        <input type="text" class="form-control" id="i_dui" required disabled="true" readonly="true">
-      </div>
-      <div class="form-group required mb-1 col-12 col-md-6">
-        <label for="i_nrc" class="form-label">NRC <em class="text-secondary">(no editable)</em></label>
-        <input type="text" class="form-control" id="i_nrc" required disabled="true" readonly="true">
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group required mb-1 col-12 col-md-6">
-        <label for="i_mai" class="form-label">Correo</label>
-        <input type="email" class="form-control" id="i_mai" required [attr.disabled]="opcion==0?true:null">
-      </div>
-      <div class="form-group required mb-1 col-12 col-md-6">
-        <label for="i_tel" class="form-label">Teléfono</label>
-        <input type="text" class="form-control" id="i_tel" required [attr.disabled]="opcion==0?true:null">
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group required mb-3 col-12">
-        <label for="i_dir" class="form-label">Dirección</label>
-        <input type="text" class="form-control" id="i_dir" required [attr.disabled]="opcion==0?true:null">
+      <div class="row">
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_mai" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="i_mai" required [attr.disabled]="opcion==0?true:null">
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_tel" class="form-label">Teléfono</label>
+          <input type="text" class="form-control" id="i_tel" required [attr.disabled]="opcion==0?true:null">
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="form-group mb-1 col-4">
-        <label for="i_file" class="form-label">Credencial CVCP (pdf, jpg, jpeg, png)</label>
-        <input class="form-control" type="file" id="i_file" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
+    <div class="card mb-2 p-2 bg-custom-soft">
+      <div class="row">
+        <div class="form-group required mb-1 col-12 col-md-3">
+          <label class="form-label" for="i_dir_pais">País</label>
+          <select class="form-select" id="i_dir_pais" required [attr.disabled]="opcion==0?true:null">
+            <option selected>Seleccionar uno</option>
+          </select>
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-3">
+          <label class="form-label" for="i_dir_dep">Departamento</label>
+          <select class="form-select" id="i_dir_dep" required [attr.disabled]="opcion==0?true:null">
+            <option selected>Seleccionar uno</option>
+          </select>
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-3">
+          <label class="form-label" for="i_dir_mun">Municipio</label>
+          <select class="form-select" id="i_dir_mun" required [attr.disabled]="opcion==0?true:null">
+            <option selected>Seleccionar uno</option>
+          </select>
+        </div>
+        <div class="form-group required mb-3 col-12 col-md-3">
+          <label for="i_dir" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="i_dir" required [attr.disabled]="opcion==0?true:null">
+        </div>
       </div>
-      <div class="form-group mb-1 col-4">
-        <label for="i_file" class="form-label">Período desde</label>
-        <app-custom-datepicker 
+    </div>
+    <div class="card mb-2 p-2 bg-custom-soft">
+      <div class="row">
+        <div class="form-group required mb-1 col-12 col-md-3">
+          <label for="i_creden" class="form-label">Credencial CVCP</label>
+          <input class="form-control" type="text" id="i_creden" required [attr.disabled]="opcion==0?true:null">
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-3">
+          <label for="i_file" class="form-label">Contrato</label>
+          <input class="form-control" type="file" id="i_file" required accept=".pdf, .jpg, .jpeg, .png" required [attr.disabled]="opcion==0?true:null">
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-3">
+          <label for="i_file" class="form-label">Período desde</label>
+          <app-custom-datepicker 
+            [displayMonths]="1"
+            [navigation]="'select'"
+            [outsideDays]="'visible'"
+            [disabled]="opcion==0?true:null"
+          />
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-3">
+          <label for="i_file" class="form-label">Hasta</label>
+          <app-custom-datepicker 
           [displayMonths]="1"
           [navigation]="'select'"
           [outsideDays]="'visible'"
           [disabled]="opcion==0?true:null"
-        />
+          />
+        </div>
       </div>
-      <div class="form-group mb-1 col-4">
-        <label for="i_file" class="form-label">Hasta</label>
-        <app-custom-datepicker 
-        [displayMonths]="1"
-        [navigation]="'select'"
-        [outsideDays]="'visible'"
-        [disabled]="opcion==0?true:null"
-        />
+      <div class="row">
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_file2" class="form-label">Antedecentes Penales</label>
+          <input type="file" class="form-control" id="i_file2" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
+        </div>
+        <div class="form-group required mb-1 col-12 col-md-6">
+          <label for="i_file3" class="form-label">Solvencial Policia</label>
+          <input type="file" class="form-control" id="i_file3" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="form-group mb-1 col-12 col-md-6">
-        <label for="i_file2" class="form-label">Antedecentes Penales</label>
-        <input type="file" class="form-control" id="i_file2" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
-      </div>
-      <div class="form-group mb-1 col-12 col-md-6">
-        <label for="i_file3" class="form-label">Solvencial Policia</label>
-        <input type="file" class="form-control"  id="i_file3" accept=".pdf, .jpg, .jpeg, .png" [attr.disabled]="opcion==0?true:null">
-      </div>
     <div class="d-flex justify-content-end mt-3">
       <button class="btn" (click)="operacion()" [ngClass]="opcion == 0?'btn-warning':'btn-danger'">
         {{ opciones[opcion] }}

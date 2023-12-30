@@ -23,7 +23,7 @@ export class CustomDatepickerComponent extends NgbDatepickerI18n {
   @Input() public displayMonths: number = 1;
   @Input() public navigation: string = 'arrows';
   @Input() public outsideDays: string = 'visible';
-  @Input() public disabled: any = true;
+  @Input() public disabled: any = false;
 
   getWeekdayShortName(weekday: number): string {
     return SPANISH_I18N_VALUES.weekdays[weekday - 1];
